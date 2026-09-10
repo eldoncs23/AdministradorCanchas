@@ -130,10 +130,7 @@
             "c:\\program files\\microsoft visual studio\\18\\community\\vc\\tools\\msvc\\14.51.36231\\include\\ostream",
             "c:\\program files\\microsoft visual studio\\18\\community\\vc\\tools\\msvc\\14.51.36231\\include\\sstream",
             "c:\\program files\\microsoft visual studio\\18\\community\\vc\\tools\\msvc\\14.51.36231\\include\\string",
-            "f:\\github\\administradorcanchas\\admincanchasdepor\\gestlista.h",
-            "f:\\github\\administradorcanchas\\admincanchasdepor\\clientes.h",
-            "f:\\github\\administradorcanchas\\admincanchasdepor\\canchas.h",
-            "f:\\github\\administradorcanchas\\admincanchasdepor\\reservas.h"
+            "f:\\github\\administradorcanchas\\admincanchasdepor\\menu.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []
