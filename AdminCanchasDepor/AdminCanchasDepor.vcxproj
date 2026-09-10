@@ -143,14 +143,17 @@
     <ClCompile Include="Canchas.cpp" />
     <ClCompile Include="Clientes.cpp" />
     <ClCompile Include="Estadisticas.cpp" />
-    <ClCompile Include="GestLista.cpp" />
+    <ClCompile Include="Espera.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Menu.cpp" />
     <ClCompile Include="Reservas.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Canchas.h" />
     <ClInclude Include="Clientes.h" />
     <ClInclude Include="Estadisticas.h" />
-    <ClInclude Include="GestLista.h" />
+    <ClInclude Include="Espera.h" />
+    <ClInclude Include="Menu.h" />
     <ClInclude Include="Reservas.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

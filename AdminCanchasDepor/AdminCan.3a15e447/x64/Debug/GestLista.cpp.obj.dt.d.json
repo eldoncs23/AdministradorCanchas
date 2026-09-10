@@ -1,0 +1,12 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "f:\\github\\administradorcanchas\\admincanchasdepor\\gestlista.cpp",
+        "ProvidedModule": "",
+        "Includes": [
+            "f:\\github\\administradorcanchas\\admincanchasdepor\\gestlista.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

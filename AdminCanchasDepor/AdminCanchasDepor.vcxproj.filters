@@ -27,10 +27,16 @@
     <ClCompile Include="Reservas.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GestLista.cpp">
+    <ClCompile Include="Espera.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Estadisticas.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Menu.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -44,10 +50,13 @@
     <ClInclude Include="Reservas.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GestLista.h">
+    <ClInclude Include="Espera.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Estadisticas.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Menu.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

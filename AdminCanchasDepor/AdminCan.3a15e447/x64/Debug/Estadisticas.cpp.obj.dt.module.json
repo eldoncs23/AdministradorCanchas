@@ -1,0 +1,14 @@
+{
+    "version": 1,
+    "revision": 0,
+    "rules": [
+        {
+            "primary-output": "AdminCan.3a15e447\\x64\\Debug\\Estadisticas.obj",
+            "outputs": [
+                "AdminCan.3a15e447\\x64\\Debug\\Estadisticas.cpp.obj.dt.module.json",
+                "AdminCan.3a15e447\\x64\\Debug\\Estadisticas.cpp.obj.dt.d.json"
+            ],
+            "requires": []
+        }
+    ]
+}

@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="AdminCanchasDepor.vcxproj" />
+  <Project Path="AdminCanchasDepor.vcxproj" Id="3a15e447-dbb7-4988-9b13-09573d05df94" />
 </Solution>
