@@ -9,7 +9,7 @@ class Cancha;
 class Reserva {
 
 private:
-    int numeroReserva;
+	static const int numeroReserva; // Atributo constante para el número de reserva
     int franjaInicial;
     int cantidadFranjas;
     float monto;

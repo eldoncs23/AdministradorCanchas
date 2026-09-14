@@ -6,7 +6,7 @@ using namespace std;
 class Cliente {
 
 private:
-    string id;
+    const string id;
     string nombre;
     string telefono;
 
