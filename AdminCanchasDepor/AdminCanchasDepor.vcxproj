@@ -139,7 +139,6 @@
     </Manifest>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="AdminCanchasDepor.cpp" />
     <ClCompile Include="Canchas.cpp" />
     <ClCompile Include="Clientes.cpp" />
     <ClCompile Include="Estadisticas.cpp" />

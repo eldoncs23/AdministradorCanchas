@@ -1,23 +1,17 @@
 #include <iostream>
 #include "Clientes.h"
 
-Cliente::Cliente() {
-    id = "";
+Cliente::Cliente() : id("") {
     nombre = "";
     telefono = "";
 }
 
-Cliente::Cliente(string id, string nombre, string telefono) {
-    this->id = id;
-    this->nombre = nombre;
-    this->telefono = telefono;
+Cliente::Cliente(string id, string nombre, string telefono)
+    : id(id), nombre(nombre), telefono(telefono){
+    
 }
 
 Cliente::~Cliente() {}
-
-void Cliente::setId(string id) {
-    this->id = id;
-}
 
 void Cliente::setNombre(string nombre) {
     this->nombre = nombre;
@@ -27,15 +21,15 @@ void Cliente::setTelefono(string telefono) {
     this->telefono = telefono;
 }
 
-string Cliente::getId() {
+string Cliente::getId() const {
     return id;
 }
 
-string Cliente::getNombre() {
+string Cliente::getNombre() const {
     return nombre;
 }
 
-string Cliente::getTelefono() {
+string Cliente::getTelefono() const     {
     return telefono;
 }
 void Cliente::mostrar() {
