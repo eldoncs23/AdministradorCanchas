@@ -9,7 +9,6 @@
 
 	(2026)
 */
-#pragma once
 #include <iostream>
 #include <stdlib.h>
 #include <sstream>
@@ -18,9 +17,9 @@ using namespace std;
 
 int main() {
 	
-	App* iniciar = new App;
-	bool continuar; 
-	do { continuar = iniciar->menu(); } while (continuar);
+	Menu* menu = new Menu;
+	menu->iniciar();	
+	delete menu;
 
     return 0;
 }

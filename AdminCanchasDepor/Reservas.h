@@ -9,30 +9,38 @@ class Cancha;
 class Reserva {
 
 private:
-	static const int numeroReserva; // Atributo constante para el número de reserva
+	static int contadorSecuencia; //contador global para generar IDs de reserva únicos
+	const int numeroReserva; // Atributo constante para el número de reserva
     int franjaInicial;
     int cantidadFranjas;
     float monto;
     bool activa;
+	
 
+	//relaciones con otras clases
     Cliente* cliente;
     Cancha* cancha;
 
 public:
     Reserva();
-    Reserva(int numeroReserva, int franjaInicial, int cantidadFranjas, float monto, bool activa);
+    Reserva(Cliente* c, Cancha* ca, int franjaInicial, int cantidadFranjas);
     ~Reserva();
-    int getNumeroReserva();
-    int getFranjaInicial();
-    int getCantidadFranjas();
-    float getMonto();
-    bool getActiva();
-    void setNumeroReserva(int numeroReserva);
+
+	//getter
+    int getNumeroReserva() const;
+    int getFranjaInicial() const;
+    int getCantidadFranjas() const;
+    float getMonto() const;
+    bool getActiva() const;
+	Cliente* getCliente() const;
+	Cancha* getCancha() const;
+    //setts
     void setFranjaInicial(int franjaInicial);
     void setCantidadFranjas(int cantidadFranjas);
     void setMonto(float monto);
     void setActiva(bool activa);
-    void mostrar();
-    void registrar(int num, Cliente* c, Cancha* ca, int fi, int cf);
+
+    void mostrar()const;
+    void registrar(Cliente* c, Cancha* ca, int fi, int cf);
 
 };

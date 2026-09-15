@@ -1,44 +1,44 @@
 #include "Espera.h"
 #include "Clientes.h"
 #include "Canchas.h"
-
 #include <iostream>
-#include <string>
-#include <sstream>
-
-Espera::Espera() {
-    numeroEspera = 0;
-    franja = 0;
-    estado = "";
-    cliente = nullptr;
-    cancha = nullptr;
+int Espera::contadorSecuencia = 1; //inicializar el contador de secuencia para generar IDs de espera únicos
+//constructor por defecto
+Espera::Espera() : numeroEspera(contadorSecuencia++), franja(0), estado("esperando"), cliente(nullptr), cancha(nullptr) {
+	// Constructor por defecto
+	// cliente y cancha se inicializan como punteros nulos
+	// no se puede usar this->numeroEspera = numeroEspera; porque numeroEspera es constante y se asigna en el constructor
+}
+Espera::Espera(Cliente* c, Cancha* ca, int franja, string estado): numeroEspera(contadorSecuencia++),
+franja(franja), estado(estado), cliente(c), cancha(ca) {
+	//constructor con parámetros
 }
 
-Espera::Espera(int numeroReserva, int franja, string estado) {
-    this->numeroEspera = numeroReserva;
-    this->franja = franja;
-    this->estado = estado;
-    this->cliente = nullptr;
-    this->cancha = nullptr;
+Espera::~Espera() {
+	// Destructor, no destruye los punteros cliente ni cancha
 }
 
-Espera::~Espera() {}
-
-int Espera::getNumeroEspera() {
+//gets
+int Espera::getNumeroEspera() const{
     return numeroEspera;
 }
 
-int Espera::getFranja() {
+int Espera::getFranja()const {
     return franja;
 }
 
-string Espera::getEstado() {
+string Espera::getEstado() const{
     return estado;
 }
-
-void Espera::setNumeroEspera(int numeroEspera) {
-    this->numeroEspera = numeroEspera;
+Cliente* Espera::getCliente() const{
+    return cliente;
 }
+
+Cancha* Espera::getCancha() const{
+    return cancha;
+}
+
+//setts
 
 void Espera::setFranja(int franja) {
     this->franja = franja;
@@ -48,17 +48,17 @@ void Espera::setEstado(string estado) {
     this->estado = estado;
 }
 
-void Espera::registrar(int num, Cliente* c, Cancha* ca, int f) {
-    numeroEspera = num;
-    cliente = c;
-    cancha = ca;
-    franja = f;
-    estado = "esperando";
+void Espera::registrar(Cliente* c, Cancha* ca, int f) {
+    this->cliente = c;
+    this->cancha = ca;
+    this->franja = f;
+    this->estado = "esperando";
 }
 
-void Espera::mostrar() {
-    std::cout << "Espera #" << numeroEspera << " | Cliente: " << cliente->getId()
-        << " | Cancha: " << cancha->getCodigo()
+void Espera::mostrar() const {
+    cout << "Espera #" << numeroEspera
+        << " | Cliente: " << (cliente != nullptr ? cliente->getId() : "Sin cliente")
+        << " | Cancha: " << (cancha != nullptr ? cancha->getCodigo() : "Sin cancha")
         << " | Franja: " << franja
-        << " | Estado: " << estado << std::endl;
+        << " | Estado: " << estado << endl;
 }

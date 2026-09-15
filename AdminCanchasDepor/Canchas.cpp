@@ -1,81 +1,75 @@
 #include "Canchas.h"
 #include <iostream>
 
-Cancha::Cancha() {
-    codigo = "";
+Cancha::Cancha() : codigo("") {
     deporte = "";
-    precioHora = 0;
-    for (int i = 0; i < 12; i++) {
-        disponibilidad[i] = 'L';
+    precioHora = 0.0;
+	for (int i = 0; i < CANT_FRANJAS; i++) { //cambie 12 por CANT_FRANJAS
+		disponibilidad[i] = 'L'; // Inicializar todas las franjas como libres
     }
 }
-
-Cancha::Cancha(string codigo, string deporte, float precioHora, char disponibilidad) {
-    this->codigo = codigo;
-    this->deporte = deporte;
-    this->precioHora = precioHora;
-    for (int i = 0; i < 12; i++) {
-        this->disponibilidad[i] = disponibilidad;
+//constructor con parametros
+Cancha::Cancha(string codigo, string deporte, float precioHora, char dispInicial) : codigo(codigo), 
+    deporte(deporte), precioHora(precioHora) {
+	// no se puede usar this->codigo = codigo; porque codigo es constante y se asigna en el constructor
+    for (int i = 0; i < CANT_FRANJAS; i++) {
+        this->disponibilidad[i] = dispInicial;
     }
 }
 
 Cancha::~Cancha() {}
 
-string Cancha::getCodigo() {
+//getters y setters
+string Cancha::getCodigo() const{
     return codigo;
 }
 
-string Cancha::getDeporte() {
+string Cancha::getDeporte() const {
     return deporte;
 }
 
-float Cancha::getPrecioHora() {
+float Cancha::getPrecioHora() const {
     return precioHora;
 }
-
-char Cancha::getDisponibilidad() {
-    return disponibilidad[0];
-}
-
-void Cancha::setCodigo(string codigo) {
-    this->codigo = codigo;
-}
-
+// no se hace set de codigo porque es constante y se asigna en el constructor
 void Cancha::setDeporte(string deporte) {
-    this->deporte = deporte;
+	this->deporte = deporte; //aqui si se usa el this porque deporte no es constante y se puede modificar
 }
 
 void Cancha::setPrecioHora(float precioHora) {
     this->precioHora = precioHora;
 }
 
-void Cancha::setDisponibilidad(char disponibilidad) {
-    for (int i = 0; i < 12; i++) {
-        this->disponibilidad[i] = disponibilidad;
+void Cancha::setEstadoFranja(int indice, char estado) {
+    if (indice >= 0 && indice < CANT_FRANJAS) {
+        this->disponibilidad[indice] = estado;
     }
 }
 
-void Cancha::mostrarDisponibilidad() {
+void Cancha::mostrarDisponibilidad() const {
     cout << "Disponibilidad de cancha " << codigo << ": ";
-    for (int i = 0; i < 12; i++) cout << "[" << i << "] " << disponibilidad[i] << " ";
+    for (int i = 0; i < CANT_FRANJAS; i++) {
+        cout << "[" << i << "] " << disponibilidad[i] << " ";
+    }
     cout << endl;
+       
 }
 
-void Cancha::registrar(string c, string d, float p) {
-    codigo = c;
+void Cancha::registrar(string d, float p) {
     deporte = d;
     precioHora = p;
 }
 
-void Cancha::mostrar() {
+void Cancha::mostrar() const {
     cout << "Codigo: " << codigo << " | Deporte: " << deporte
         << " | Precio: " << precioHora << endl;
 }
 
 void Cancha::menuCanchas(Cancha canchas[], int& numCanchas) {
     int opcion;
+	string codTemp, depTemp;
     bool encontrado;
-    float nuevoPrecio;
+    float precTemp;
     do {
 
         cout << "==============================" << endl;
@@ -92,10 +86,10 @@ void Cancha::menuCanchas(Cancha canchas[], int& numCanchas) {
 
         if (opcion == 1) {
             if (numCanchas < 10) {
-                cout << "Ingrese codigo: "; cin >> codigo;
-                cout << "Ingrese deporte: "; cin >> deporte;
-                cout << "Ingrese precio por hora: "; cin >> precioHora;
-                canchas[numCanchas].registrar(codigo, deporte, precioHora);
+                cout << "Ingrese codigo: "; cin >> codTemp;
+                cout << "Ingrese deporte: "; cin >> depTemp;
+                cout << "Ingrese precio por hora: "; cin >> precTemp;
+                canchas[numCanchas] = Cancha(codTemp, depTemp, precTemp);
                 numCanchas++;
                 cout << "Cancha registrada exitosamente. << endl";
             }
@@ -110,7 +104,7 @@ void Cancha::menuCanchas(Cancha canchas[], int& numCanchas) {
         }
         else if (opcion == 3) {
 
-            cout << "Ingrese codigo a buscar: "; cin >> codigo;
+            cout << "Ingrese codigo a buscar: "; cin >> codTemp;
             encontrado = false;
             for (int i = 0; i < numCanchas; i++) {
                 if (canchas[i].getCodigo() == codigo) {
@@ -121,12 +115,12 @@ void Cancha::menuCanchas(Cancha canchas[], int& numCanchas) {
             if (!encontrado) cout << "Cancha no encontrada.<< endl";
         }
         else if (opcion == 4) {
-            cout << "Ingrese codigo de la cancha: "; cin >> codigo;
+            cout << "Ingrese codigo de la cancha: "; cin >> codTemp;
             encontrado = false;
             for (int i = 0; i < numCanchas; i++) {
                 if (canchas[i].getCodigo() == codigo) {
-                    cout << "Ingrese nuevo precio: "; cin >> nuevoPrecio;
-                    canchas[i].setPrecioHora(nuevoPrecio);
+                    cout << "Ingrese nuevo precio: "; cin >> precTemp;
+                    canchas[i].setPrecioHora(precTemp);
                     cout << "Precio actualizado.<< endl";
                     encontrado = true;
                 }
@@ -134,10 +128,10 @@ void Cancha::menuCanchas(Cancha canchas[], int& numCanchas) {
             if (!encontrado) cout << "Cancha no encontrada.<< endl";
         }
         else if (opcion == 5) {
-            cout << "Ingrese codigo de la cancha: "; cin >> codigo;
+            cout << "Ingrese codigo de la cancha: "; cin >> codTemp;
             encontrado = false;
             for (int i = 0; i < numCanchas; i++) {
-                if (canchas[i].getCodigo() == codigo) {
+                if (canchas[i].getCodigo() == codTemp) {
                     canchas[i].mostrarDisponibilidad();
                     encontrado = true;
                 }
