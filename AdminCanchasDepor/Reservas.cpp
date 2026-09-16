@@ -1,8 +1,9 @@
 #include "Reservas.h"
 #include "Canchas.h"
 #include "Clientes.h"
+using namespace std;
 
-//hay que iinicar la variable estatica
+//hay que  inicar la variable estatica
 int Reserva::contadorSecuencia = 1;
 
 Reserva::Reserva() : numeroReserva(0), franjaInicial(0), cantidadFranjas(0), monto(0.0), activa(false), cliente(nullptr), cancha(nullptr) {
@@ -13,6 +14,7 @@ Reserva::Reserva() : numeroReserva(0), franjaInicial(0), cantidadFranjas(0), mon
 // ahora si constructor con parametros, se le asigna un numero de reserva unico a cada reserva
 Reserva::Reserva(Cliente* c, Cancha* ca, int franjaInicial, int cantidadFranjas)
 	: numeroReserva(contadorSecuencia++), franjaInicial(franjaInicial), cantidadFranjas(cantidadFranjas), activa(true), cliente(c), cancha(ca) {
+	
 	//contadorSecuencia++se incrementa para la siguiente reserva, al declararlo static int,
 	// solo hay una copia de memoria para todas las instancias de la clase Reserva, por lo que cada vez que se crea una nueva reserva,
 	// el contador se incrementa y se asigna un nuevo número de reserva único a esa instancia.
@@ -86,6 +88,13 @@ void Reserva::registrar(Cliente* c, Cancha* ca, int fi, int cf) {
 	}
 	this->activa=true;
 	
+}
+
+void Reserva::cancelar(){
+	if (activa) {
+		cancha->cancelarFranja(franjaInicial, cantidadFranjas);
+		activa = false;
+	}
 }
 
 void Reserva::mostrar() const {

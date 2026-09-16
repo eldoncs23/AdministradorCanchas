@@ -3,7 +3,7 @@
 	Programación 1 - Johny
 	Proyecto: Administrador de Canchas Deportivas
 	Estudiantes:
-	- (charlie ponga su nombre)
+	- Carlos Brenes Lopez
 	- Eldon Caldwell Salazar 
 
 

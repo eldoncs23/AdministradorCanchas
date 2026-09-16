@@ -1,58 +1,58 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "F:\\Github\\AdministradorCanchas\\AdminCanchasDepor\\",
+  "WorkspaceRootPath": "C:\\Users\\Carlos\\Desktop\\AdministradorCanchas\\AdminCanchasDepor\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3A15E447-DBB7-4988-9B13-09573D05DF94}|AdminCanchasDepor.vcxproj|F:\\Github\\AdministradorCanchas\\AdminCanchasDepor\\Canchas.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{3A15E447-DBB7-4988-9B13-09573D05DF94}|AdminCanchasDepor.vcxproj|solutionrelative:Canchas.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3A15E447-DBB7-4988-9B13-09573D05DF94}|AdminCanchasDepor.vcxproj|F:\\Github\\AdministradorCanchas\\AdminCanchasDepor\\Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{3A15E447-DBB7-4988-9B13-09573D05DF94}|AdminCanchasDepor.vcxproj|solutionrelative:Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3A15E447-DBB7-4988-9B13-09573D05DF94}|AdminCanchasDepor.vcxproj|F:\\Github\\AdministradorCanchas\\AdminCanchasDepor\\Menu.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{3A15E447-DBB7-4988-9B13-09573D05DF94}|AdminCanchasDepor.vcxproj|solutionrelative:Menu.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3A15E447-DBB7-4988-9B13-09573D05DF94}|AdminCanchasDepor.vcxproj|F:\\Github\\AdministradorCanchas\\AdminCanchasDepor\\Clientes.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{3A15E447-DBB7-4988-9B13-09573D05DF94}|AdminCanchasDepor.vcxproj|solutionrelative:Clientes.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3A15E447-DBB7-4988-9B13-09573D05DF94}|AdminCanchasDepor.vcxproj|F:\\Github\\AdministradorCanchas\\AdminCanchasDepor\\Espera.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{3A15E447-DBB7-4988-9B13-09573D05DF94}|AdminCanchasDepor.vcxproj|solutionrelative:Espera.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3A15E447-DBB7-4988-9B13-09573D05DF94}|AdminCanchasDepor.vcxproj|F:\\Github\\AdministradorCanchas\\AdminCanchasDepor\\Estadisticas.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{3A15E447-DBB7-4988-9B13-09573D05DF94}|AdminCanchasDepor.vcxproj|solutionrelative:Estadisticas.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3A15E447-DBB7-4988-9B13-09573D05DF94}|AdminCanchasDepor.vcxproj|F:\\Github\\AdministradorCanchas\\AdminCanchasDepor\\Menu.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{3A15E447-DBB7-4988-9B13-09573D05DF94}|AdminCanchasDepor.vcxproj|solutionrelative:Menu.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3A15E447-DBB7-4988-9B13-09573D05DF94}|AdminCanchasDepor.vcxproj|F:\\Github\\AdministradorCanchas\\AdminCanchasDepor\\Reservas.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{3A15E447-DBB7-4988-9B13-09573D05DF94}|AdminCanchasDepor.vcxproj|solutionrelative:Reservas.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3A15E447-DBB7-4988-9B13-09573D05DF94}|AdminCanchasDepor.vcxproj|F:\\Github\\AdministradorCanchas\\AdminCanchasDepor\\Reservas.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{3A15E447-DBB7-4988-9B13-09573D05DF94}|AdminCanchasDepor.vcxproj|solutionrelative:Reservas.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3A15E447-DBB7-4988-9B13-09573D05DF94}|AdminCanchasDepor.vcxproj|F:\\Github\\AdministradorCanchas\\AdminCanchasDepor\\Estadisticas.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{3A15E447-DBB7-4988-9B13-09573D05DF94}|AdminCanchasDepor.vcxproj|C:\\Users\\Carlos\\Desktop\\AdministradorCanchas\\AdminCanchasDepor\\Estadisticas.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{3A15E447-DBB7-4988-9B13-09573D05DF94}|AdminCanchasDepor.vcxproj|solutionrelative:Estadisticas.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3A15E447-DBB7-4988-9B13-09573D05DF94}|AdminCanchasDepor.vcxproj|F:\\Github\\AdministradorCanchas\\AdminCanchasDepor\\Espera.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{3A15E447-DBB7-4988-9B13-09573D05DF94}|AdminCanchasDepor.vcxproj|C:\\Users\\Carlos\\Desktop\\AdministradorCanchas\\AdminCanchasDepor\\Estadisticas.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{3A15E447-DBB7-4988-9B13-09573D05DF94}|AdminCanchasDepor.vcxproj|solutionrelative:Estadisticas.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3A15E447-DBB7-4988-9B13-09573D05DF94}|AdminCanchasDepor.vcxproj|C:\\Users\\Carlos\\Desktop\\AdministradorCanchas\\AdminCanchasDepor\\Reservas.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{3A15E447-DBB7-4988-9B13-09573D05DF94}|AdminCanchasDepor.vcxproj|solutionrelative:Reservas.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3A15E447-DBB7-4988-9B13-09573D05DF94}|AdminCanchasDepor.vcxproj|C:\\Users\\Carlos\\Desktop\\AdministradorCanchas\\AdminCanchasDepor\\Reservas.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{3A15E447-DBB7-4988-9B13-09573D05DF94}|AdminCanchasDepor.vcxproj|solutionrelative:Reservas.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3A15E447-DBB7-4988-9B13-09573D05DF94}|AdminCanchasDepor.vcxproj|C:\\Users\\Carlos\\Desktop\\AdministradorCanchas\\AdminCanchasDepor\\Canchas.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{3A15E447-DBB7-4988-9B13-09573D05DF94}|AdminCanchasDepor.vcxproj|solutionrelative:Canchas.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3A15E447-DBB7-4988-9B13-09573D05DF94}|AdminCanchasDepor.vcxproj|C:\\Users\\Carlos\\Desktop\\AdministradorCanchas\\AdminCanchasDepor\\Canchas.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{3A15E447-DBB7-4988-9B13-09573D05DF94}|AdminCanchasDepor.vcxproj|solutionrelative:Canchas.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3A15E447-DBB7-4988-9B13-09573D05DF94}|AdminCanchasDepor.vcxproj|C:\\Users\\Carlos\\Desktop\\AdministradorCanchas\\AdminCanchasDepor\\Menu.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{3A15E447-DBB7-4988-9B13-09573D05DF94}|AdminCanchasDepor.vcxproj|solutionrelative:Menu.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3A15E447-DBB7-4988-9B13-09573D05DF94}|AdminCanchasDepor.vcxproj|C:\\Users\\Carlos\\Desktop\\AdministradorCanchas\\AdminCanchasDepor\\Espera.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{3A15E447-DBB7-4988-9B13-09573D05DF94}|AdminCanchasDepor.vcxproj|solutionrelative:Espera.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3A15E447-DBB7-4988-9B13-09573D05DF94}|AdminCanchasDepor.vcxproj|F:\\Github\\AdministradorCanchas\\AdminCanchasDepor\\Clientes.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{3A15E447-DBB7-4988-9B13-09573D05DF94}|AdminCanchasDepor.vcxproj|C:\\Users\\Carlos\\Desktop\\AdministradorCanchas\\AdminCanchasDepor\\Clientes.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{3A15E447-DBB7-4988-9B13-09573D05DF94}|AdminCanchasDepor.vcxproj|solutionrelative:Clientes.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3A15E447-DBB7-4988-9B13-09573D05DF94}|AdminCanchasDepor.vcxproj|F:\\Github\\AdministradorCanchas\\AdminCanchasDepor\\Canchas.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{3A15E447-DBB7-4988-9B13-09573D05DF94}|AdminCanchasDepor.vcxproj|solutionrelative:Canchas.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{3A15E447-DBB7-4988-9B13-09573D05DF94}|AdminCanchasDepor.vcxproj|C:\\Users\\Carlos\\Desktop\\AdministradorCanchas\\AdminCanchasDepor\\Clientes.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{3A15E447-DBB7-4988-9B13-09573D05DF94}|AdminCanchasDepor.vcxproj|solutionrelative:Clientes.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3A15E447-DBB7-4988-9B13-09573D05DF94}|AdminCanchasDepor.vcxproj|C:\\Users\\Carlos\\Desktop\\AdministradorCanchas\\AdminCanchasDepor\\Espera.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{3A15E447-DBB7-4988-9B13-09573D05DF94}|AdminCanchasDepor.vcxproj|solutionrelative:Espera.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3A15E447-DBB7-4988-9B13-09573D05DF94}|AdminCanchasDepor.vcxproj|C:\\Users\\Carlos\\Desktop\\AdministradorCanchas\\AdminCanchasDepor\\Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{3A15E447-DBB7-4988-9B13-09573D05DF94}|AdminCanchasDepor.vcxproj|solutionrelative:Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3A15E447-DBB7-4988-9B13-09573D05DF94}|AdminCanchasDepor.vcxproj|C:\\Users\\Carlos\\Desktop\\AdministradorCanchas\\AdminCanchasDepor\\Menu.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{3A15E447-DBB7-4988-9B13-09573D05DF94}|AdminCanchasDepor.vcxproj|solutionrelative:Menu.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -62,176 +62,164 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Menu.cpp",
-              "DocumentMoniker": "F:\\Github\\AdministradorCanchas\\AdminCanchasDepor\\Menu.cpp",
-              "RelativeDocumentMoniker": "Menu.cpp",
-              "ToolTip": "F:\\Github\\AdministradorCanchas\\AdminCanchasDepor\\Menu.cpp",
-              "RelativeToolTip": "Menu.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-09-10T06:47:31.242Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Main.cpp",
-              "DocumentMoniker": "F:\\Github\\AdministradorCanchas\\AdminCanchasDepor\\Main.cpp",
-              "RelativeDocumentMoniker": "Main.cpp",
-              "ToolTip": "F:\\Github\\AdministradorCanchas\\AdminCanchasDepor\\Main.cpp",
-              "RelativeToolTip": "Main.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-09-10T05:37:53.746Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Reservas.cpp",
-              "DocumentMoniker": "F:\\Github\\AdministradorCanchas\\AdminCanchasDepor\\Reservas.cpp",
-              "RelativeDocumentMoniker": "Reservas.cpp",
-              "ToolTip": "F:\\Github\\AdministradorCanchas\\AdminCanchasDepor\\Reservas.cpp",
-              "RelativeToolTip": "Reservas.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAB9AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-09-10T06:58:21.521Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Reservas.h",
-              "DocumentMoniker": "F:\\Github\\AdministradorCanchas\\AdminCanchasDepor\\Reservas.h",
-              "RelativeDocumentMoniker": "Reservas.h",
-              "ToolTip": "F:\\Github\\AdministradorCanchas\\AdminCanchasDepor\\Reservas.h",
-              "RelativeToolTip": "Reservas.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-09-10T03:14:36.439Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Menu.h",
-              "DocumentMoniker": "F:\\Github\\AdministradorCanchas\\AdminCanchasDepor\\Menu.h",
-              "RelativeDocumentMoniker": "Menu.h",
-              "ToolTip": "F:\\Github\\AdministradorCanchas\\AdminCanchasDepor\\Menu.h",
-              "RelativeToolTip": "Menu.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-09-10T06:46:09.363Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Estadisticas.h",
-              "DocumentMoniker": "F:\\Github\\AdministradorCanchas\\AdminCanchasDepor\\Estadisticas.h",
-              "RelativeDocumentMoniker": "Estadisticas.h",
-              "ToolTip": "F:\\Github\\AdministradorCanchas\\AdminCanchasDepor\\Estadisticas.h",
-              "RelativeToolTip": "Estadisticas.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-09-10T03:15:52.878Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Espera.h",
-              "DocumentMoniker": "F:\\Github\\AdministradorCanchas\\AdminCanchasDepor\\Espera.h",
-              "RelativeDocumentMoniker": "Espera.h",
-              "ToolTip": "F:\\Github\\AdministradorCanchas\\AdminCanchasDepor\\Espera.h",
-              "RelativeToolTip": "Espera.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-09-10T03:15:14.372Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Clientes.h",
-              "DocumentMoniker": "F:\\Github\\AdministradorCanchas\\AdminCanchasDepor\\Clientes.h",
-              "RelativeDocumentMoniker": "Clientes.h",
-              "ToolTip": "F:\\Github\\AdministradorCanchas\\AdminCanchasDepor\\Clientes.h",
-              "RelativeToolTip": "Clientes.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-09-10T03:14:11.772Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Canchas.h",
-              "DocumentMoniker": "F:\\Github\\AdministradorCanchas\\AdminCanchasDepor\\Canchas.h",
-              "RelativeDocumentMoniker": "Canchas.h",
-              "ToolTip": "F:\\Github\\AdministradorCanchas\\AdminCanchasDepor\\Canchas.h",
-              "RelativeToolTip": "Canchas.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAYwAkAAAATAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-09-10T03:14:20.539Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
               "Title": "Estadisticas.cpp",
-              "DocumentMoniker": "F:\\Github\\AdministradorCanchas\\AdminCanchasDepor\\Estadisticas.cpp",
+              "DocumentMoniker": "C:\\Users\\Carlos\\Desktop\\AdministradorCanchas\\AdminCanchasDepor\\Estadisticas.cpp",
               "RelativeDocumentMoniker": "Estadisticas.cpp",
-              "ToolTip": "F:\\Github\\AdministradorCanchas\\AdminCanchasDepor\\Estadisticas.cpp",
+              "ToolTip": "C:\\Users\\Carlos\\Desktop\\AdministradorCanchas\\AdminCanchasDepor\\Estadisticas.cpp",
               "RelativeToolTip": "Estadisticas.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAABIBAAAAAAAAAAAAAIwAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-09-15T01:40:28.603Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Espera.cpp",
-              "DocumentMoniker": "F:\\Github\\AdministradorCanchas\\AdminCanchasDepor\\Espera.cpp",
-              "RelativeDocumentMoniker": "Espera.cpp",
-              "ToolTip": "F:\\Github\\AdministradorCanchas\\AdminCanchasDepor\\Espera.cpp",
-              "RelativeToolTip": "Espera.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD8AAAABAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "Reservas.cpp",
+              "DocumentMoniker": "C:\\Users\\Carlos\\Desktop\\AdministradorCanchas\\AdminCanchasDepor\\Reservas.cpp",
+              "RelativeDocumentMoniker": "Reservas.cpp",
+              "ToolTip": "C:\\Users\\Carlos\\Desktop\\AdministradorCanchas\\AdminCanchasDepor\\Reservas.cpp",
+              "RelativeToolTip": "Reservas.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-09-10T07:01:56.012Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-10T06:58:21.521Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Canchas.cpp",
+              "DocumentMoniker": "C:\\Users\\Carlos\\Desktop\\AdministradorCanchas\\AdminCanchasDepor\\Canchas.cpp",
+              "RelativeDocumentMoniker": "Canchas.cpp",
+              "ToolTip": "C:\\Users\\Carlos\\Desktop\\AdministradorCanchas\\AdminCanchasDepor\\Canchas.cpp",
+              "RelativeToolTip": "Canchas.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAKAAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-09-10T07:01:20.378Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Estadisticas.h",
+              "DocumentMoniker": "C:\\Users\\Carlos\\Desktop\\AdministradorCanchas\\AdminCanchasDepor\\Estadisticas.h",
+              "RelativeDocumentMoniker": "Estadisticas.h",
+              "ToolTip": "C:\\Users\\Carlos\\Desktop\\AdministradorCanchas\\AdminCanchasDepor\\Estadisticas.h",
+              "RelativeToolTip": "Estadisticas.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-09-10T03:15:52.878Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Canchas.h",
+              "DocumentMoniker": "C:\\Users\\Carlos\\Desktop\\AdministradorCanchas\\AdminCanchasDepor\\Canchas.h",
+              "RelativeDocumentMoniker": "Canchas.h",
+              "ToolTip": "C:\\Users\\Carlos\\Desktop\\AdministradorCanchas\\AdminCanchasDepor\\Canchas.h",
+              "RelativeToolTip": "Canchas.h",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAAB4AAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-09-10T03:14:20.539Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Reservas.h",
+              "DocumentMoniker": "C:\\Users\\Carlos\\Desktop\\AdministradorCanchas\\AdminCanchasDepor\\Reservas.h",
+              "RelativeDocumentMoniker": "Reservas.h",
+              "ToolTip": "C:\\Users\\Carlos\\Desktop\\AdministradorCanchas\\AdminCanchasDepor\\Reservas.h",
+              "RelativeToolTip": "Reservas.h",
+              "ViewState": "AgIAABMAAAAAAAAAAAAAAC0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-09-10T03:14:36.439Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Menu.cpp",
+              "DocumentMoniker": "C:\\Users\\Carlos\\Desktop\\AdministradorCanchas\\AdminCanchasDepor\\Menu.cpp",
+              "RelativeDocumentMoniker": "Menu.cpp",
+              "ToolTip": "C:\\Users\\Carlos\\Desktop\\AdministradorCanchas\\AdminCanchasDepor\\Menu.cpp",
+              "RelativeToolTip": "Menu.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADQAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-09-10T06:47:31.242Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Espera.cpp",
+              "DocumentMoniker": "C:\\Users\\Carlos\\Desktop\\AdministradorCanchas\\AdminCanchasDepor\\Espera.cpp",
+              "RelativeDocumentMoniker": "Espera.cpp",
+              "ToolTip": "C:\\Users\\Carlos\\Desktop\\AdministradorCanchas\\AdminCanchasDepor\\Espera.cpp",
+              "RelativeToolTip": "Espera.cpp",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAAD8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-09-10T07:01:56.012Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Clientes.cpp",
+              "DocumentMoniker": "C:\\Users\\Carlos\\Desktop\\AdministradorCanchas\\AdminCanchasDepor\\Clientes.cpp",
+              "RelativeDocumentMoniker": "Clientes.cpp",
+              "ToolTip": "C:\\Users\\Carlos\\Desktop\\AdministradorCanchas\\AdminCanchasDepor\\Clientes.cpp",
+              "RelativeToolTip": "Clientes.cpp",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAAAAoAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-09-10T07:00:55.048Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Clientes.h",
+              "DocumentMoniker": "C:\\Users\\Carlos\\Desktop\\AdministradorCanchas\\AdminCanchasDepor\\Clientes.h",
+              "RelativeDocumentMoniker": "Clientes.h",
+              "ToolTip": "C:\\Users\\Carlos\\Desktop\\AdministradorCanchas\\AdminCanchasDepor\\Clientes.h",
+              "RelativeToolTip": "Clientes.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-09-10T03:14:11.772Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Espera.h",
+              "DocumentMoniker": "C:\\Users\\Carlos\\Desktop\\AdministradorCanchas\\AdminCanchasDepor\\Espera.h",
+              "RelativeDocumentMoniker": "Espera.h",
+              "ToolTip": "C:\\Users\\Carlos\\Desktop\\AdministradorCanchas\\AdminCanchasDepor\\Espera.h",
+              "RelativeToolTip": "Espera.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-09-10T03:15:14.372Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 11,
-              "Title": "Clientes.cpp",
-              "DocumentMoniker": "F:\\Github\\AdministradorCanchas\\AdminCanchasDepor\\Clientes.cpp",
-              "RelativeDocumentMoniker": "Clientes.cpp",
-              "ToolTip": "F:\\Github\\AdministradorCanchas\\AdminCanchasDepor\\Clientes.cpp",
-              "RelativeToolTip": "Clientes.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAABAAAAAAAAAA==",
+              "Title": "Main.cpp",
+              "DocumentMoniker": "C:\\Users\\Carlos\\Desktop\\AdministradorCanchas\\AdminCanchasDepor\\Main.cpp",
+              "RelativeDocumentMoniker": "Main.cpp",
+              "ToolTip": "C:\\Users\\Carlos\\Desktop\\AdministradorCanchas\\AdminCanchasDepor\\Main.cpp",
+              "RelativeToolTip": "Main.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-09-10T07:00:55.048Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-10T05:37:53.746Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 12,
-              "Title": "Canchas.cpp",
-              "DocumentMoniker": "F:\\Github\\AdministradorCanchas\\AdminCanchasDepor\\Canchas.cpp",
-              "RelativeDocumentMoniker": "Canchas.cpp",
-              "ToolTip": "F:\\Github\\AdministradorCanchas\\AdminCanchasDepor\\Canchas.cpp",
-              "RelativeToolTip": "Canchas.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFsAAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-09-10T07:01:20.378Z",
-              "EditorCaption": ""
+              "Title": "Menu.h",
+              "DocumentMoniker": "C:\\Users\\Carlos\\Desktop\\AdministradorCanchas\\AdminCanchasDepor\\Menu.h",
+              "RelativeDocumentMoniker": "Menu.h",
+              "ToolTip": "C:\\Users\\Carlos\\Desktop\\AdministradorCanchas\\AdminCanchasDepor\\Menu.h",
+              "RelativeToolTip": "Menu.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-09-10T06:46:09.363Z"
             }
           ]
         }

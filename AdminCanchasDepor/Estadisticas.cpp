@@ -2,12 +2,22 @@
 #include "Canchas.h"
 #include "Clientes.h"
 #include "Reservas.h"
+#include "Espera.h"
 #include <stdlib.h>
+#include "iostream"
+using namespace std;
+
 Estadisticas::Estadisticas() {
-	// Constructor
+	totalClientes = 0;
+	totalCanchas = 0;
+	totalReservas = 0;
+	maxReservas = 120;
+	reservas = new Reserva[maxReservas];
+	totalEspera = 0;
 }
+
 Estadisticas::~Estadisticas() {
-	// Destructor
+	delete[] reservas;
 }
 
 // 1. Cancha más reservada
@@ -123,8 +133,8 @@ void Estadisticas::reportePorcentajeOcupacion(Cancha* canchas[], int cantCanchas
 			}
 		}
 		// El porcentaje se calcula en base a la capacidad operativa de franjas por cancha
-		float porcentaje = (franjasOcupadas * 100.0) / CANT_FRANJAS; // CANT_FRANJAS es la cantidad total de franjas horarias posibles
-		if (porcentaje > 100.0) porcentaje = 100.0; // Control de tope
+		float porcentaje = (franjasOcupadas * 100.00) / CANT_FRANJAS; // CANT_FRANJAS es la cantidad total de franjas horarias posibles
+		if (porcentaje > 100.00) porcentaje = 100.00; 
 		cout << "-> Cancha " << codActual
 			<< "| Franjas ocupadas: " << franjasOcupadas << "/" << CANT_FRANJAS
 			<< "| Ocupacion: " << porcentaje << "%" << endl;
@@ -206,4 +216,78 @@ void Estadisticas::menuEstadisticas(Cancha* canchas[], int cantCanchas, Cliente*
 			break;
 		}
 	} while (opcion != 6);
+}
+
+void Estadisticas::registarCliente(string id,string nombre, string telefono) {
+	if (totalClientes < 100) {
+		clientes[totalClientes++] = Cliente(id, nombre, telefono);
+	}
+	else {
+		cout << "Imposible registar usuario" << endl;
+
+	}
+}
+
+Cliente* Estadisticas::buscarCliente(string id) {
+	for (int i = 0; i < totalClientes; i++) {
+		if (clientes[i].getId() == id) {
+			return &clientes[i];
+		}
+	}
+	return nullptr;
+}
+
+void Estadisticas::mostrarCliente(){
+	for (int i = 0; i < totalClientes; i++) {
+		cout << "Cliente #" << (i + 1) << ": " << endl;
+		cout << "ID: " << clientes[i].getId() << endl;
+		cout << "Nombre: " << clientes[i].getNombre() << endl;
+		cout << "Telefono: " << clientes[i].getTelefono() << endl;
+		cout << "------------------------" << endl;
+	}
+}
+
+void Estadisticas::registrarCancha(string codigo, string tipo, float precio) {
+	if (totalCanchas < 10) {
+		canchas[totalCanchas++] = Cancha(codigo, tipo, precio);
+	}
+	else {
+		cout << "Imposible registrar cancha" << endl;
+	}
+}
+
+Cancha* Estadisticas::buscarCancha(string codigo) {
+	for (int i = 0; i < totalCanchas; i++) {
+		if (canchas[i].getCodigo() == codigo) {
+			return &canchas[i];
+		}
+	}
+	return nullptr;
+}
+
+void Estadisticas::mostrarCanchas() {
+	for (int i = 0; i < totalCanchas; i++) {
+		cout << "Cancha: " << canchas[i].getCodigo() 
+			 << canchas[i].getDeporte()
+			 << canchas[i].getPrecioHora() << endl;
+	}
+}
+//Pruebas
+void Estadisticas::registrarReserva(string id, string codigo, int franjaInicial, int cantidadFranjas) {
+	Cliente* cliente = buscarCliente(id);
+	Cancha* cancha =buscarCancha(codigo);
+	if (cancha && cliente && totalReservas < maxReservas) {
+		//reservas[totalReservas++] = Reserva ();
+		if (reservas[totalReservas - 1].getActiva()) {
+			cout << "Reserva registrada exitosamente." << endl;
+		}
+		else {
+			cout << "Se encuentra en lista de espera." << endl;
+		//	registarCliente();
+		}	
+		totalReservas++;
+	}
+	else {
+		cout << "Imposible registrar reserva" << endl;
+	}
 }

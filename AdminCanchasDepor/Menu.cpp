@@ -53,7 +53,7 @@ bool Menu::mostrarMenu() {
 	cin >> opcion;
 	//validar que la opcion sea correcta
 	while (opcion < 1 || opcion > 6) {
-		cout << "Ingrese una opción válida (1-6): ";
+		cout << "Ingrese una opcion valida (1-6): ";
 		cin >> opcion;
 	}
 

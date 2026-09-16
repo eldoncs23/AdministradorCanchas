@@ -1,5 +1,6 @@
 #include "Canchas.h"
 #include <iostream>
+using namespace std; 
 
 Cancha::Cancha() : codigo("") {
     deporte = "";
@@ -12,6 +13,8 @@ Cancha::Cancha() : codigo("") {
 Cancha::Cancha(string codigo, string deporte, float precioHora, char dispInicial) : codigo(codigo), 
     deporte(deporte), precioHora(precioHora) {
 	// no se puede usar this->codigo = codigo; porque codigo es constante y se asigna en el constructor
+    this -> deporte = deporte;
+    this->precioHora = precioHora;
     for (int i = 0; i < CANT_FRANJAS; i++) {
         this->disponibilidad[i] = dispInicial;
     }
@@ -140,5 +143,22 @@ void Cancha::menuCanchas(Cancha canchas[], int& numCanchas) {
         }
     } while (opcion != 6);
 }
-
-
+// Valida que no sea 0 o que sobrepase el numero maximo, revisa que solo si es 'L' -> Libre continue,si se cumple la 'O' -> Ocupa
+bool Cancha::reservarFranja(int inicio, int cantidad) {
+    if (inicio < 0 || inicio + cantidad > 12)
+        return false;
+    for (int i = inicio; i < inicio + cantidad; i++) {
+        if (disponibilidad[i] != 'L')
+            return false;
+    }
+    for (int i = inicio; i < inicio + cantidad; i++)
+        disponibilidad[i] = 'O';
+    return true;
+}
+//Se corre el ciclo y si encuentra opcion '0' -> Ocupa, las libera 'L' -> Libre 
+void Cancha::cancelarFranja(int franjaInicial, int cantidadFranjas) {
+    for (int i = franjaInicial; i < franjaInicial + cantidadFranjas; i++) {
+        if (disponibilidad[i] == '0')
+            disponibilidad[i] = 'L';
+    }
+}

@@ -1,7 +1,8 @@
 #include <iostream>
 #include "Clientes.h"
+using namespace std;
 
-Cliente::Cliente() : id("") {
+Cliente::Cliente() : id("") { 
     nombre = "";
     telefono = "";
 }

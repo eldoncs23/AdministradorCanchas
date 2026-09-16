@@ -1,6 +1,4 @@
 #pragma once
-#ifndef MENU_H
-#define MENU_H
 #include "Espera.h"
 #include "Clientes.h"
 #include "Reservas.h"
@@ -27,4 +25,3 @@ public:
 	bool mostrarMenu();
 	void iniciar();
 };
-#endif

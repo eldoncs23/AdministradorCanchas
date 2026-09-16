@@ -4,14 +4,26 @@
 
 #include <iostream>
 #include <string>
+#include "Canchas.h"
+#include "Clientes.h"
+#include "Reservas.h"
+#include "Espera.h"
 using namespace std;
 
-class Cancha;
-class Cliente;
-class Reserva;
 class Estadisticas{
 private:
+	Cliente clientes[100];
+	int totalClientes;
+	Cancha canchas[10];
+	int totalCanchas;
+	Reserva* reservas;
+	int totalReservas;
+	int maxReservas;
+	Espera espera[10];
+	int totalEspera;
 	static const int CANT_FRANJAS = 12; // Atributo constante para la cantidad de franjas horarias, ya que son 12 franjas de 1 hora cada una
+
+
 public:
 	Estadisticas();
 	~Estadisticas();
@@ -25,6 +37,17 @@ public:
 
 	//menu
 	void menuEstadisticas(Cancha* canchas[], int cantCanchas, Cliente* clientes[], int cantClientes, Reserva* reservas[], int cantReservas)const;
+
+	//Pruebas
+	void registarCliente(string id,string nombre, string telefono);
+	Cliente* buscarCliente(string id);
+	void mostrarCliente();
+
+	void registrarCancha(string codigo, string tipo, float precio);
+	Cancha* buscarCancha(string codigo);	
+	void mostrarCanchas();
+	void registrarReserva(string id, string codigo,int franjaInicial, int cantidadFranjas);
+
 };
 
 #endif
