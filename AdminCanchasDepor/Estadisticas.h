@@ -40,6 +40,7 @@ public:
 
 	//Pruebas
 	void registarCliente(string id,string nombre, string telefono);
+	void registarClienteTest();
 	Cliente* buscarCliente(string id);
 	void mostrarCliente();
 
@@ -48,6 +49,15 @@ public:
 	void mostrarCanchas();
 	void registrarReserva(string id, string codigo,int franjaInicial, int cantidadFranjas);
 
+	void mostrarReservas();
+	void cancelarReserva(int numeroReserva);
+	void registrarEspera(string id, string codigo, int franjaInicial);
+	void mostrarEspera();
+	void reporteCanchas();
+	void reporteClientes();
+	void reportePorcentajeOcupacion();
+	void reporteIngresoTotal();
+	void reporteFranjas();
 };
 
 #endif

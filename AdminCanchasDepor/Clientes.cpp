@@ -8,7 +8,7 @@ Cliente::Cliente() : id("") {
 }
 
 Cliente::Cliente(string id, string nombre, string telefono)
-    : id(id), nombre(nombre), telefono(telefono){
+    : id(id) , nombre(nombre), telefono(telefono){
     
 }
 

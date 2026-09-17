@@ -1,5 +1,4 @@
 #pragma once
-
 #include <string>
 using namespace std;
 
@@ -8,13 +7,13 @@ private:
 	static const int CANT_FRANJAS = 12; // Atributo constante para la cantidad de franjas horarias, ya que son 12 franjas de 1 hora cada una
     string codigo;
     string deporte;
-    float precioHora;
+	float precioHora; // Lo puse double por recomendacion de Visual, me tiraba warning
 	char disponibilidad[CANT_FRANJAS]; // Arreglo de 12 franjas horarias, cada una representada por un carácter ('L' para libre, 'O' para ocupada)
 
 public:
     //Constructores y destructor
     Cancha();
-	Cancha(string codigo, string deporte, float precioHora, char disInicial = 'L'); // preguntar al tutor si se puede poner un valor por defecto para el atributo disponibilidad
+	Cancha(string codigo, string deporte, float precioHora, char dispInicial = 'L'); // preguntar al tutor si se puede poner un valor por defecto para el atributo disponibilidad
     //Respondiendo a esto si lo dejo solo con '' me tira error que debe tener algun caracter
     ~Cancha();
     //Set y Get

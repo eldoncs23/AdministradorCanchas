@@ -60,6 +60,8 @@ bool Menu::mostrarMenu() {
 	switch (opcion) {
 	case 1:
 		// Agregar Cancha
+		//Cada case debe ser un submenu, por ejemplo case 1 debe desplazar todas las
+		//opciones de canchas
 		system("cls");
 		cout << endl << endl;
 		cout << "  -------------------------------------------------------" << endl;

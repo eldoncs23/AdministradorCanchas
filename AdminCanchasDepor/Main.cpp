@@ -12,11 +12,11 @@
 #include <iostream>
 #include <stdlib.h>
 #include <sstream>
+#include "Estadisticas.h"
 #include "Menu.h"
 using namespace std;
 
 int main() {
-	
 	Menu* menu = new Menu;
 	menu->iniciar();	
 	delete menu;

@@ -8,8 +8,8 @@ class Cancha;
 class Espera {
 private:
 	static int contadorSecuencia; //contador global para generar IDs de espera únicos
-	const int numeroEspera; // Atributo constante para el número de espera
-    int franja;
+	int numeroEspera; // Atributo para el número de espera (removed const to allow assignment)
+	int franja;
 	string estado; // "esperando", "cancelada", "atendido
 	//relaciones con otras clases
     Cliente* cliente;

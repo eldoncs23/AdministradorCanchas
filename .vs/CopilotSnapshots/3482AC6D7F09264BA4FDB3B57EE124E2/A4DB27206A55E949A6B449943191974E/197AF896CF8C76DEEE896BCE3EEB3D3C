@@ -1,0 +1,38 @@
+﻿#pragma once
+#include "Clientes.h"
+#include "Canchas.h"
+using namespace std;
+class Cliente;
+class Cancha;
+
+class Espera {
+private:
+	static int contadorSecuencia; //contador global para generar IDs de espera únicos
+	int numeroEspera; // Atributo para el número de espera (removed const to allow assignment)
+	int franja;
+	string estado; // "esperando", "cancelada", "atendido
+	//relaciones con otras clases
+    Cliente* cliente;
+    Cancha* cancha;
+
+public:
+    Espera();
+	Espera(Cliente* c, Cancha* ca, int franja, string estado = "esperando");
+    ~Espera();
+
+    //gets
+	int getNumeroEspera() const;
+	int getFranja() const;
+	string getEstado() const;
+	Cliente* getCliente() const;
+	Cancha* getCancha() const;
+
+    //settters
+    void setFranja(int franja);
+    void setEstado(string estado);
+
+    void registrar(Cliente* c, Cancha* ca, int f);
+    void mostrar()const;
+
+};
+
