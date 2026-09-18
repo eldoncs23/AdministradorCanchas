@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "F:\\Github\\AdministradorCanchas\\AdminCanchasDepor\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{3A15E447-DBB7-4988-9B13-09573D05DF94}|AdminCanchasDepor.vcxproj|F:\\Github\\AdministradorCanchas\\AdminCanchasDepor\\Menu.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{3A15E447-DBB7-4988-9B13-09573D05DF94}|AdminCanchasDepor.vcxproj|solutionrelative:Menu.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{3A15E447-DBB7-4988-9B13-09573D05DF94}|AdminCanchasDepor.vcxproj|F:\\Github\\AdministradorCanchas\\AdminCanchasDepor\\Canchas.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{3A15E447-DBB7-4988-9B13-09573D05DF94}|AdminCanchasDepor.vcxproj|solutionrelative:Canchas.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3A15E447-DBB7-4988-9B13-09573D05DF94}|AdminCanchasDepor.vcxproj|F:\\Github\\AdministradorCanchas\\AdminCanchasDepor\\Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{3A15E447-DBB7-4988-9B13-09573D05DF94}|AdminCanchasDepor.vcxproj|solutionrelative:Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3A15E447-DBB7-4988-9B13-09573D05DF94}|AdminCanchasDepor.vcxproj|F:\\Github\\AdministradorCanchas\\AdminCanchasDepor\\Menu.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{3A15E447-DBB7-4988-9B13-09573D05DF94}|AdminCanchasDepor.vcxproj|solutionrelative:Menu.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3A15E447-DBB7-4988-9B13-09573D05DF94}|AdminCanchasDepor.vcxproj|F:\\Github\\AdministradorCanchas\\AdminCanchasDepor\\Clientes.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -62,24 +62,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Menu.cpp",
               "DocumentMoniker": "F:\\Github\\AdministradorCanchas\\AdminCanchasDepor\\Menu.cpp",
               "RelativeDocumentMoniker": "Menu.cpp",
               "ToolTip": "F:\\Github\\AdministradorCanchas\\AdminCanchasDepor\\Menu.cpp",
               "RelativeToolTip": "Menu.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAASAAAAAAAAAA==",
+              "ViewState": "AgIAAG0AAAAAAAAAAAAAAHcAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-09-10T06:47:31.242Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Main.cpp",
               "DocumentMoniker": "F:\\Github\\AdministradorCanchas\\AdminCanchasDepor\\Main.cpp",
               "RelativeDocumentMoniker": "Main.cpp",
@@ -87,8 +87,7 @@
               "RelativeToolTip": "Main.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-09-10T05:37:53.746Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-10T05:37:53.746Z"
             },
             {
               "$type": "Document",
@@ -100,8 +99,7 @@
               "RelativeToolTip": "Reservas.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAB9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-09-10T06:58:21.521Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-10T06:58:21.521Z"
             },
             {
               "$type": "Document",
@@ -113,8 +111,7 @@
               "RelativeToolTip": "Reservas.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-09-10T03:14:36.439Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-10T03:14:36.439Z"
             },
             {
               "$type": "Document",
@@ -126,8 +123,7 @@
               "RelativeToolTip": "Menu.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-09-10T06:46:09.363Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-10T06:46:09.363Z"
             },
             {
               "$type": "Document",
@@ -139,8 +135,7 @@
               "RelativeToolTip": "Estadisticas.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-09-10T03:15:52.878Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-10T03:15:52.878Z"
             },
             {
               "$type": "Document",
@@ -152,8 +147,7 @@
               "RelativeToolTip": "Espera.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-09-10T03:15:14.372Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-10T03:15:14.372Z"
             },
             {
               "$type": "Document",
@@ -165,18 +159,17 @@
               "RelativeToolTip": "Clientes.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-09-10T03:14:11.772Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-10T03:14:11.772Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Canchas.h",
               "DocumentMoniker": "F:\\Github\\AdministradorCanchas\\AdminCanchasDepor\\Canchas.h",
               "RelativeDocumentMoniker": "Canchas.h",
               "ToolTip": "F:\\Github\\AdministradorCanchas\\AdminCanchasDepor\\Canchas.h",
               "RelativeToolTip": "Canchas.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAYwAkAAAATAAAAAAAAAA==",
+              "ViewState": "AgIAABIAAAAAAAAAAAAYwAkAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2026-09-10T03:14:20.539Z",
               "EditorCaption": ""
@@ -191,8 +184,7 @@
               "RelativeToolTip": "Estadisticas.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-09-15T01:40:28.603Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-15T01:40:28.603Z"
             },
             {
               "$type": "Document",
@@ -204,8 +196,7 @@
               "RelativeToolTip": "Espera.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAD8AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-09-10T07:01:56.012Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-10T07:01:56.012Z"
             },
             {
               "$type": "Document",
@@ -217,8 +208,7 @@
               "RelativeToolTip": "Clientes.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-09-10T07:00:55.048Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-10T07:00:55.048Z"
             },
             {
               "$type": "Document",
@@ -230,8 +220,7 @@
               "RelativeToolTip": "Canchas.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAFsAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-09-10T07:01:20.378Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-10T07:01:20.378Z"
             }
           ]
         }
