@@ -1,6 +1,7 @@
 #include "Menu.h"
 #include <iostream>
 #include <stdlib.h>
+#include "Estadisticas.h"
 #include <sstream>
 using namespace std;
 Menu::Menu() {
@@ -119,3 +120,99 @@ bool Menu::mostrarMenu() {
 
 	//esto es una prueba eldon 2
 	//prueba borrador incompleta aun no esta lista para merge
+
+void Menu::menuClientes() {
+	int opcion;
+		do {
+			cout << "Gestion de Clientes"  << endl;
+			cout << "1. Registrar Cliente" << endl;
+			cout << "2. Mostrar Clientes"  << endl;
+			cin >> opcion;
+
+			if (opcion == 1) {
+				string id, nombre, telefono;
+				cout << "Ingrese la identificacion del cliente: ";
+				cin >> id;
+				cout << "Ingrese el nombre del cliente: ";
+				cin >> nombre;
+				cout << "Ingrese el telefono del cliente: ";
+				cin >> telefono;
+				Cliente* nuevoCliente = new Cliente(id, nombre, telefono);
+				registrarCliente(nuevoCliente);
+			}
+			else if (opcion == 2) {
+				mostrarCliente();
+			}
+			else {
+				cout << "Opcion invalida. Intente nuevamente." << endl;
+			}
+		} 
+		while (opcion != 0);
+}
+
+
+void Menu::menuCanchas() {
+	int opcion;
+	do {
+		cout << "Gestion de Canchas" << endl;
+		cout << "1. Registrar Cancha" << endl;
+		cout << "2. Mostrar Canchas" << endl;
+		cin >> opcion;
+		if (opcion == 1) {
+			string codigo, deporte;
+			float precioHora;
+			cout << "Ingrese la identificacion de la cancha: ";
+			cin >> codigo;
+			cout << "Ingrese el deporte de la cancha: ";
+			cin >> deporte;
+			cout << "Ingrese el precio por hora de la cancha: ";
+			cin >> precioHora;
+			Cancha* nuevaCancha = new Cancha(codigo, deporte, precioHora);
+			listaCanchas->agregarCancha(nuevaCancha);
+		
+		}
+		else if(opcion == 2) {
+			listaCanchas->mostrarCanchas();
+		}
+		else {
+			cout << "Opcion invalida. Intente nuevamente." << endl;
+		}
+	} 
+	while (opcion != 0);
+}
+
+void Menu::menuReservas() {
+	int opcion;
+	do {
+		cout << "Gestion de Reservas" << endl;
+		cout << "1. Registrar Reserva" << endl;
+		cout << "2. Mostrar Reservas" << endl;
+		cout << "3. Cancelar Reserva" << endl;
+		cin >> opcion;
+		if (opcion == 1) {
+			string idCliente, codigoCancha, fecha, hora;
+			cout << "Ingrese la identificacion del cliente: ";
+			cin >> idCliente;
+			cout << "Ingrese el codigo de la cancha: ";
+			cin >> codigoCancha;
+			cout << "Ingrese la fecha de la reserva (dd/mm/aaaa): ";
+			cin >> fecha;
+			cout << "Ingrese la hora de la reserva (hh:mm): ";
+			cin >> hora;
+			Reserva* nuevaReserva = new Reserva(idCliente, codigoCancha, fecha, hora);
+			listaReservas->agregarReserva(nuevaReserva);
+		}
+		else if (opcion == 2) {
+			listaReservas->mostrarReservas();
+		}
+		else if (opcion == 3) {
+			int numero;
+			cout << "Cancelando reserva: ";
+			cin >> numero;
+			listaReservas->cancelarReserva(numero);
+		}
+		else {
+			cout << "Opcion invalida. Intente nuevamente." << endl;
+		}
+	} while (opcion != 0);
+}

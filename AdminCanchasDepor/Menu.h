@@ -6,6 +6,7 @@
 #include <iostream>
 #include <stdlib.h>
 #include <sstream>
+#include <vector>
 
 class Menu {
 	Espera* listaCanchas;
@@ -23,5 +24,10 @@ public:
 	void setCantCl(int c);
 	void tostring();
 	bool mostrarMenu();
+	void menuClientes();
+	void menuCanchas();
+	void menuReservas();
+	void menuEspera();
+	void menuEstadisticas();
 	void iniciar();
 };
