@@ -150,6 +150,7 @@
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="RegistroEspera.cpp" />
+    <ClCompile Include="Reserva.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Cancha.h" />

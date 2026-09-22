@@ -50,23 +50,15 @@ Reserva* ColeccionReservas::buscarReserva(int numeroReserva)const {
     return nullptr;
 }
 bool ColeccionReservas::cancelarReserva(int numeroReserva) {
+    
 	Reserva* reserva = buscarReserva(numeroReserva); //buscar la reserva por numero
 	if (reserva == nullptr || !reserva->isActiva()) { //verificar que la reserva exista y esté activa
 		return false; //no se encontró la reserva
 	}
     //cambiar estado de la reserva
 	reserva->cancelarReserva(); //utilizamos el metodo cancelarReserva de la clase Reserva para cambiar el estado de la reserva
-
-	//liberar las franjas horarias correspondientes en la cancha (O -> L)
-	Cancha* cancha = reserva->getCancha();
-    if(cancha != nullptr) {
-		int inicio = reserva->getFranjaInicio();
-		int cantidad = reserva->getCantidadFranjas();
-		for (int i = inicio; i < inicio + cantidad; i++) {
-			cancha->liberarFranja(i);
-		}
-    }
-    return false;
+    
+    return true;
 }
 
 void ColeccionReservas::mostrarTodasReservas() const {

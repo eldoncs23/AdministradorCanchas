@@ -48,6 +48,9 @@
     <ClCompile Include="ColeccionEspera.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Reserva.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Cliente.h">
