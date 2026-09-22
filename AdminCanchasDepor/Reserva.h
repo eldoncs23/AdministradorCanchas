@@ -1,46 +1,42 @@
-#pragma once
+#ifndef RESERVA_H
+#define RESERVA_H
 #include <iostream>
 #include <string>
+#include "Cliente.h"
+#include "Cancha.h"
+
 using namespace std;
 
-class Cliente;
-class Cancha;
-
 class Reserva {
-
 private:
-	static int contadorSecuencia; //contador global para generar IDs de reserva únicos
-	const int numeroReserva; // Atributo constante para el número de reserva
-    int franjaInicial;
+	int numeroReserva; // Atributo constante para el número de reserva
+    int franjaInicio;
     int cantidadFranjas;
-    float monto;
+    double montoTotal;
     bool activa;
-	
-
+	static int siguienteNumeroReserva; // Atributo estático para llevar el control del siguiente número de reserva
 	//relaciones con otras clases
     Cliente* cliente;
     Cancha* cancha;
 
 public:
     Reserva();
-    Reserva(Cliente* c, Cancha* ca, int franjaInicial, int cantidadFranjas);
+    Reserva(Cliente* cliente, Cancha* cancha, int franjaInicio, int cantidadFranjas);
     ~Reserva();
-
-	//getter
+	const Cliente* getCliente() const; // se usa const para indicar que el puntero no se puede modificar y que la función no modifica el objeto
+    const Cancha* getCancha() const;
+	//getters
     int getNumeroReserva() const;
-    int getFranjaInicial() const;
+    int getFranjaInicio() const;
     int getCantidadFranjas() const;
-    float getMonto() const;
-    bool getActiva() const;
-	Cliente* getCliente() const;
-	Cancha* getCancha() const;
-    //setts
-    void setFranjaInicial(int franjaInicial);
-    void setCantidadFranjas(int cantidadFranjas);
-    void setMonto(float monto);
-    void setActiva(bool activa);
-
+    double getMontoTotal() const;
+	bool isActiva() const; // se usa isActiva() en lugar de getActiva() para indicar que es un método que devuelve un valor booleano
+	
+	// no hay setters para numeroReserva, cliente y cancha porque son constantes y no deben modificarse después de la creación de la reserva
+    
+    //metodos
+	bool cancelarReserva();
     void mostrar()const;
-    void registrar(Cliente* c, Cancha* ca, int fi, int cf);
 
 };
+#endif

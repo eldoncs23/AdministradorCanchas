@@ -1,98 +1,87 @@
 #include "Reserva.h"
-#include "Cancha.h"
-#include "Cliente.h"
 
 //hay que iinicar la variable estatica
-int Reserva::contadorSecuencia = 1;
+int Reserva::siguienteNumeroReserva = 1;
 
-Reserva::Reserva() : numeroReserva(0), franjaInicial(0), cantidadFranjas(0), monto(0.0), activa(false), cliente(nullptr), cancha(nullptr) {
-	// Constructor por defecto
-	// cliente y cancha se inicializan como punteros nulos
-	// no se puede usar this->numeroReserva = numeroReserva; porque numeroReserva es constante y se asigna en el constructor
+Reserva::Reserva(){
+	numeroReserva = siguienteNumeroReserva++; // Asignar un número de reserva único y luego incrementar el contador
+	cliente = nullptr;
+	cancha = nullptr;
+	franjaInicio = 0;
+	cantidadFranjas = 0;
+	montoTotal = 0.0;
+	activa = false;
 }
-// ahora si constructor con parametros, se le asigna un numero de reserva unico a cada reserva
-Reserva::Reserva(Cliente* c, Cancha* ca, int franjaInicial, int cantidadFranjas)
-	: numeroReserva(contadorSecuencia++), franjaInicial(franjaInicial), cantidadFranjas(cantidadFranjas), activa(true), cliente(c), cancha(ca) {
-	//contadorSecuencia++se incrementa para la siguiente reserva, al declararlo static int,
-	// solo hay una copia de memoria para todas las instancias de la clase Reserva, por lo que cada vez que se crea una nueva reserva,
-	// el contador se incrementa y se asigna un nuevo número de reserva único a esa instancia.
-	// asi el usuario no tiene que preocuparse por asignar un numero de reserva unico, ya que el sistema lo hace automaticamente
-	// Constructor con parámetros
-	if (cancha != nullptr) { // si la cancha no es nula, se calcula el monto multiplicando la cantidad de franjas por el precio por hora de la cancha
-		monto = cantidadFranjas * cancha->getPrecioHora();
+
+Reserva::Reserva(Cliente* cliente, Cancha* cancha, int franjaInicial, int cantidadFranjas){
+	numeroReserva = siguienteNumeroReserva++;
+	this->cliente = cliente;
+	this->cancha = cancha;
+	this->franjaInicio = franjaInicio;
+	this->cantidadFranjas = cantidadFranjas;
+	this->activa = true;
+	if (cancha != nullptr) {
+		this->montoTotal = cancha->getPrecioPorHora() * cantidadFranjas;
 	}
 	else {
-		monto = 0.0;
+		this->montoTotal = 0.0;
 	}
+	
 }
-Reserva::~Reserva() {} // Destructor, no se eliminan punteros cliente y cancha porque no se sabe si fueron creados en otro lugar, para evitar errores de doble liberación de memoria.
+Reserva::~Reserva() {
+	// No se eliminan los punteros cliente y cancha porque no se sabe si fueron creados en otro lugar, para evitar errores de doble liberación de memoria.
+	cliente = nullptr;
+	cancha = nullptr; // Se establece a nullptr para indicar que ya no se está utilizando
+}
 
 //getts
 int Reserva::getNumeroReserva() const{
     return numeroReserva;
 }
-
-int Reserva::getFranjaInicial()const{
-    return franjaInicial;
+const Cliente* Reserva::getCliente() const {
+	return cliente;
+}
+const Cancha* Reserva::getCancha() const {
+	return cancha;
+}
+int Reserva::getFranjaInicio()const{
+    return franjaInicio;
 }
 
 int Reserva::getCantidadFranjas()const{
     return cantidadFranjas;
 }
 
-float Reserva::getMonto() const {
-    return monto;
+double Reserva::getMontoTotal() const {
+    return montoTotal;
 }
 
-bool Reserva::getActiva()const{
+bool Reserva::isActiva()const{
     return activa;
 }
-Cliente* Reserva::getCliente() const {
-	return cliente;
-}
 
-Cancha* Reserva::getCancha() const {
-	return cancha;
-}
-
-//setts
-void Reserva::setFranjaInicial(int franjaInicial) {
-    this->franjaInicial = franjaInicial;
-}
-
-void Reserva::setCantidadFranjas(int cantidadFranjas) {
-    this->cantidadFranjas = cantidadFranjas;
-	if (cancha != nullptr) { // si la cancha no es nula, se recalcula el monto multiplicando la cantidad de franjas por el precio por hora de la cancha
-		this->monto = this->cantidadFranjas * cancha->getPrecioHora();
+// no hay setters para numeroReserva, cliente y cancha porque son constantes y no deben modificarse después de la creación de la reserva
+bool Reserva::cancelarReserva() {
+	if (activa) { //verifica si la reserva está activa antes de cancelarla
+		activa = false;
+		return true; // La reserva se canceló exitosamente
 	}
-}
-
-void Reserva::setMonto(float monto) {
-    this->monto = monto;
-}
-
-void Reserva::setActiva(bool activa) {
-    this->activa = activa;
-}
-
-void Reserva::registrar(Cliente* c, Cancha* ca, int fi, int cf) {
-    
-    this->cliente = c;
-    this->cancha = ca;
-    this->franjaInicial = fi;
-    this->cantidadFranjas = cf;
-	if (cancha != nullptr) { 
-		this->monto = cf * cancha->getPrecioHora(); // recalcula el monto multiplicando la cantidad de franjas por el precio por hora de la cancha
-	}
-	this->activa=true;
-	
+	return false; // La reserva ya estaba cancelada
 }
 
 void Reserva::mostrar() const {
-	cout << "Reserva #" << numeroReserva
-		<< " | Cliente: " << (cliente != nullptr ? cliente->getId() : "Sin Asignar")// si el puntero cliente es nulo, se muestra "Sin Asignar"
-		<< " | Cancha: " << (cancha != nullptr ? cancha->getCodigo() : "Sin Asignar")// si el puntero cancha es nulo, se muestra "Sin Asignar"
-        << " | Franjas: " << cantidadFranjas
-        << " | Monto: " << monto
-        << " | Estado: " << (activa ? "Activa" : "Cancelada") << endl;
+	cout << "========================================" << endl;
+	cout << "RESERVA #" << numeroReserva << " - Estado: " << (activa ? "ACTIVA" : "CANCELADA") << endl;
+	cout << "----------------------------------------" << endl;
+	if (cliente != nullptr) {
+		cout << "Cliente: " << cliente->getNombre() << " (" << cliente->getIdentificacion() << ")" << endl;
+	}
+	if (cancha != nullptr) {
+		cout << "Cancha: " << cancha->getCodigo() << " (" << cancha->getDeporte() << ")" << endl;
+	}
+	int horaInicio = 8 + franjaInicio; // Suponiendo que la primera franja corresponde a las 8:00 AM
+	int horaFin = horaInicio + cantidadFranjas; // Calcular la hora de finalización sumando la cantidad de franjas
+	cout << "Horario: " << horaInicio << ":00 - " << horaFin << ":00 (" << cantidadFranjas << " hora/s)" << endl;
+	cout << "Monto Total: " << montoTotal << "Colones" << endl;
+	cout << "========================================" << endl;
 }
