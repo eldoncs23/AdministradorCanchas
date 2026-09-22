@@ -1,6 +1,6 @@
 #include "ColeccionClientes.h"
 
-ColeccionClientes::ColeccionClientes(int capacidad = 100) {
+ColeccionClientes::ColeccionClientes(int capacidad) {
 	this->max = capacidad;
     this->cant = 0;
 	this->vec = new Cliente * [max]; //se crea un arreglo dinámico de punteros a Cliente

@@ -143,6 +143,7 @@
     <ClCompile Include="Cliente.cpp" />
     <ClCompile Include="ColeccionCanchas.cpp" />
     <ClCompile Include="ColeccionClientes.cpp" />
+    <ClCompile Include="ColeccionReservas.cpp" />
     <ClCompile Include="Estadisticas.cpp" />
     <ClCompile Include="Espera.cpp" />
     <ClCompile Include="Main.cpp" />
@@ -154,6 +155,7 @@
     <ClInclude Include="Cliente.h" />
     <ClInclude Include="ColeccionCanchas.h" />
     <ClInclude Include="ColeccionClientes.h" />
+    <ClInclude Include="ColeccionReservas.h" />
     <ClInclude Include="Estadisticas.h" />
     <ClInclude Include="RegistroEspera.h" />
     <ClInclude Include="Menu.h" />
