@@ -1,4 +1,4 @@
-#include "Canchas.h"
+#include "Cancha.h"
 #include <iostream>
 
 Cancha::Cancha() : codigo("") {

@@ -1,7 +1,7 @@
 #include "Estadisticas.h"
-#include "Canchas.h"
-#include "Clientes.h"
-#include "Reservas.h"
+#include "Cancha.h"
+#include "Cliente.h"
+#include "Reserva.h"
 #include <stdlib.h>
 Estadisticas::Estadisticas() {
 	// Constructor

@@ -1,6 +1,6 @@
 #include "Espera.h"
-#include "Clientes.h"
-#include "Canchas.h"
+#include "Cliente.h"
+#include "Cancha.h"
 #include <iostream>
 int Espera::contadorSecuencia = 1; //inicializar el contador de secuencia para generar IDs de espera únicos
 //constructor por defecto

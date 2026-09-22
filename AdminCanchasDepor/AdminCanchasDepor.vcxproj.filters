@@ -15,13 +15,13 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Clientes.cpp">
+    <ClCompile Include="Cliente.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Canchas.cpp">
+    <ClCompile Include="Cancha.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Reservas.cpp">
+    <ClCompile Include="Reserva.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Espera.cpp">
@@ -38,13 +38,13 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Clientes.h">
+    <ClInclude Include="Cliente.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Canchas.h">
+    <ClInclude Include="Cancha.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Reservas.h">
+    <ClInclude Include="Reserva.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Espera.h">

@@ -1,6 +1,6 @@
-#include "Reservas.h"
-#include "Canchas.h"
-#include "Clientes.h"
+#include "Reserva.h"
+#include "Cancha.h"
+#include "Cliente.h"
 
 //hay que iinicar la variable estatica
 int Reserva::contadorSecuencia = 1;

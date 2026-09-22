@@ -1,6 +1,6 @@
 #pragma once
-#include "Clientes.h"
-#include "Canchas.h"
+#include "Cliente.h"
+#include "Cancha.h"
 using namespace std;
 class Cliente;
 class Cancha;
