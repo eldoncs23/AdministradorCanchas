@@ -45,6 +45,9 @@
     <ClCompile Include="ColeccionReservas.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ColeccionEspera.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Cliente.h">
@@ -72,6 +75,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ColeccionReservas.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ColeccionEspera.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
