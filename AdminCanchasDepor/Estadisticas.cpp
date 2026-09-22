@@ -27,7 +27,7 @@ void Estadisticas::reporteCanchaMasReservada(Cancha* canchas[], int cantCanchas,
 		std::string codActual = canchas[i]->getCodigo();
 
 		for (int j = 0; j < cantReservas; j++) {
-			if (reservas[j]->getActiva() && reservas[j]->getCancha() != nullptr) {
+			if (reservas[j]->isActiva() && reservas[j]->getCancha() != nullptr) {
 				if (reservas[j]->getCancha()->getCodigo() == codActual) {
 					contadorLocal++;
 				}
@@ -60,11 +60,11 @@ void Estadisticas::reporteClienteMasReservas(Cliente* clientes[], int cantClient
 	string nombreClienteMax = "";
 	for (int i = 0; i < cantClientes; i++) {
 		int contadorLocal = 0;
-		std::string idActual = clientes[i]->getId();
+		std::string idActual = clientes[i]->getIdentificacion();
 
 		for (int j = 0; j < cantReservas; j++) {
-			if (reservas[j]->getActiva() && reservas[j]->getCliente() != nullptr) {
-				if (reservas[j]->getCliente()->getId() == idActual) {
+			if (reservas[j]->isActiva() && reservas[j]->getCliente() != nullptr) {
+				if (reservas[j]->getCliente()->getIdentificacion() == idActual) {
 					contadorLocal++;
 				}
 			}
@@ -87,11 +87,11 @@ void Estadisticas::reporteIngresoTotal(Reserva* reservas[], int cantReservas) co
 	cout << "\n==============================================" << endl;
 	cout << "              REPORTE DE INGESOS TOTALES        " << endl;
 	cout << "================================================" << endl;
-	float ingresoTotal = 0.0;
+	double ingresoTotal = 0.0;
 	int reservasActivas = 0;
 	for (int i = 0; i < cantReservas; i++) {
-		if (reservas[i]->getActiva()) {
-			float monto = reservas[i]->getMonto();
+		if (reservas[i]->isActiva()) {
+			double monto = reservas[i]->getMontoTotal();
 			ingresoTotal += monto;
 			reservasActivas++;
 			cout << "-> Reserva #" << reservas[i]->getNumeroReserva()
@@ -116,14 +116,14 @@ void Estadisticas::reportePorcentajeOcupacion(Cancha* canchas[], int cantCanchas
 		int franjasOcupadas = 0;
 		string codActual = canchas[i]->getCodigo();
 		for (int j = 0; j < cantReservas; j++) {
-			if (reservas[j]->getActiva() && reservas[j]->getCancha() != nullptr) { // si la reserva está activa y la cancha no es nula
+			if (reservas[j]->isActiva() && reservas[j]->getCancha() != nullptr) { // si la reserva está activa y la cancha no es nula
 				if (reservas[j]->getCancha()->getCodigo() == codActual) {// si la reserva pertenece a la cancha actual
 					franjasOcupadas += reservas[j]->getCantidadFranjas();// se suman las franjas ocupadas por la reserva
 				}
 			}
 		}
 		// El porcentaje se calcula en base a la capacidad operativa de franjas por cancha
-		float porcentaje = (franjasOcupadas * 100.0) / CANT_FRANJAS; // CANT_FRANJAS es la cantidad total de franjas horarias posibles
+		double porcentaje = (franjasOcupadas * 100.0) / CANT_FRANJAS; // CANT_FRANJAS es la cantidad total de franjas horarias posibles
 		if (porcentaje > 100.0) porcentaje = 100.0; // Control de tope
 		cout << "-> Cancha " << codActual
 			<< "| Franjas ocupadas: " << franjasOcupadas << "/" << CANT_FRANJAS
@@ -139,8 +139,8 @@ void Estadisticas::reporteHorasExtremas(Reserva* reservas[], int cantReservas) c
 	cout << "================================================" << endl;
 	int franjasConteo[CANT_FRANJAS] = { 0 }; // Inicializar el arreglo de conteo de franjas
 	for (int i = 0; i < cantReservas; i++) {
-		if (reservas[i]->getActiva()) {
-			int inicio = reservas[i]->getFranjaInicial();
+		if (reservas[i]->isActiva()) {
+			int inicio = reservas[i]->getFranjaInicio();
 			int duracion = reservas[i]->getCantidadFranjas();
 
 			for (int f = inicio; f < (inicio + duracion) && f < CANT_FRANJAS; f++) {

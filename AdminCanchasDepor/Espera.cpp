@@ -4,12 +4,12 @@ int RegistroEspera::siguienteConsecutivo = 1; //inicializar la variable estátic
 RegistroEspera::RegistroEspera(){
 	// Constructor por defecto
 	this->numeroConsecutivo = numeroConsecutivo++;
-	this->Posicionfranja = 0;
+	this->posicionFranja = 0;
 	this->estado = 'E';
 	this->cliente = nullptr;
 	this->cancha = nullptr;
 }
-RegistroEspera::RegistroEspera(Cliente* cliente, Cancha* cancha, int posicionFranja) : numeroConsecutivo(numeroConsecutivo++), Posicionfranja(posicionFranja), estado('E'), cliente(cliente), cancha(cancha) {
+RegistroEspera::RegistroEspera(Cliente* cliente, Cancha* cancha, int posicionFranja) : numeroConsecutivo(numeroConsecutivo++), posicionFranja(posicionFranja), estado('E'), cliente(cliente), cancha(cancha) {
 	//constructor con parámetros
 }
 
@@ -23,7 +23,7 @@ int RegistroEspera::getNumeroConsecutivo() const{
 }
 
 int RegistroEspera::getPosicionFranja()const {
-    return Posicionfranja;
+    return posicionFranja;
 }
 
 char RegistroEspera::getEstado() const{
@@ -44,9 +44,9 @@ void RegistroEspera::setEstado(char estado) {
 }
 
 void RegistroEspera::mostrar() const {
-    cout << "Espera #" << numeroEspera
-        << " | Cliente: " << (cliente != nullptr ? cliente->getId() : "Sin cliente")
+	cout << "Espera #" << numeroCsecutivo
+        << " | Cliente: " << (cliente != nullptr ? cliente->getIdentificacion() : "Sin cliente")
         << " | Cancha: " << (cancha != nullptr ? cancha->getCodigo() : "Sin cancha")
-        << " | Franja: " << franja
+        << " | Franja: " << posicionFranja
         << " | Estado: " << estado << endl;
 }

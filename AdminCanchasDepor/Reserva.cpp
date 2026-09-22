@@ -1,4 +1,5 @@
 #include "Reserva.h"
+int Reserva::siguienteNumeroReserva = 1;
 Reserva::Reserva() {
     numeroReserva = siguienteNumeroReserva++;
     this->cliente = nullptr;
@@ -62,6 +63,7 @@ bool Reserva::cancelarReserva() {
             cancha->liberarFranja(i);
         }
 	}
+	return true; //error corregido se retorna true para indicar que la reserva fue cancelada correctamente
 }
 void Reserva::mostrar() const {
     cout << "========================================" << endl;

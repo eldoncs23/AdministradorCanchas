@@ -9,12 +9,7 @@
 
 	(2026)
 */
-#include <iostream>
-#include <stdlib.h>
-#include <sstream>
 #include "Menu.h"
-using namespace std;
-
 int main() {
 	
 	Menu* menu = new Menu;
