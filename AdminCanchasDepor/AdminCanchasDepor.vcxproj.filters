@@ -21,7 +21,7 @@
     <ClCompile Include="Cancha.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Reserva.cpp">
+    <ClCompile Include="RegistroEspera.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Espera.cpp">
@@ -47,7 +47,7 @@
     <ClInclude Include="Reserva.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Espera.h">
+    <ClInclude Include="RegistroEspera.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Estadisticas.h">

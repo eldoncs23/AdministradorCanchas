@@ -9,7 +9,7 @@ using namespace std;
 
 class Reserva {
 private:
-	int numeroReserva; // Atributo constante para el número de reserva
+	int numeroReserva; // Atributo statico para el número de reserva
     int franjaInicio;
     int cantidadFranjas;
     double montoTotal;
@@ -37,6 +37,7 @@ public:
     //metodos
 	bool cancelarReserva();
     void mostrar()const;
-
+    //notas: no hay crearReserva por que esta clase es una clase entidad o molde, solo representa una reserva
+    //individual, crear o realizar reserva irá otra clase
 };
 #endif
