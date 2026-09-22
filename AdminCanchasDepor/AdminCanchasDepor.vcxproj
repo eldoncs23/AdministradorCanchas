@@ -139,21 +139,31 @@
     </Manifest>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Canchas.cpp" />
-    <ClCompile Include="Clientes.cpp" />
+    <ClCompile Include="Cancha.cpp" />
+    <ClCompile Include="Cliente.cpp" />
+    <ClCompile Include="ColeccionCanchas.cpp" />
+    <ClCompile Include="ColeccionClientes.cpp" />
+    <ClCompile Include="ColeccionEspera.cpp" />
+    <ClCompile Include="ColeccionReservas.cpp" />
     <ClCompile Include="Estadisticas.cpp" />
-    <ClCompile Include="Espera.cpp" />
+    <ClCompile Include="Reportes.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Menu.cpp" />
-    <ClCompile Include="Reservas.cpp" />
+    <ClCompile Include="RegistroEspera.cpp" />
+    <ClCompile Include="Reserva.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Canchas.h" />
-    <ClInclude Include="Clientes.h" />
+    <ClInclude Include="Cancha.h" />
+    <ClInclude Include="Cliente.h" />
+    <ClInclude Include="ColeccionCanchas.h" />
+    <ClInclude Include="ColeccionClientes.h" />
+    <ClInclude Include="ColeccionEspera.h" />
+    <ClInclude Include="ColeccionReservas.h" />
     <ClInclude Include="Estadisticas.h" />
-    <ClInclude Include="Espera.h" />
+    <ClInclude Include="Reportes.h" />
+    <ClInclude Include="RegistroEspera.h" />
     <ClInclude Include="Menu.h" />
-    <ClInclude Include="Reservas.h" />
+    <ClInclude Include="Reserva.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
