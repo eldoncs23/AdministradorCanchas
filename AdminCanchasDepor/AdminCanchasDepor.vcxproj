@@ -141,6 +141,7 @@
   <ItemGroup>
     <ClCompile Include="Cancha.cpp" />
     <ClCompile Include="Cliente.cpp" />
+    <ClCompile Include="ColeccionCanchas.cpp" />
     <ClCompile Include="ColeccionClientes.cpp" />
     <ClCompile Include="Estadisticas.cpp" />
     <ClCompile Include="Espera.cpp" />
@@ -151,6 +152,7 @@
   <ItemGroup>
     <ClInclude Include="Cancha.h" />
     <ClInclude Include="Cliente.h" />
+    <ClInclude Include="ColeccionCanchas.h" />
     <ClInclude Include="ColeccionClientes.h" />
     <ClInclude Include="Estadisticas.h" />
     <ClInclude Include="RegistroEspera.h" />
