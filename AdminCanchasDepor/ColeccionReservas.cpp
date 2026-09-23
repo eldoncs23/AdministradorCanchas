@@ -116,3 +116,30 @@ Reserva* ColeccionReservas::getReservaPorIndice(int indice)const {
     }
     return nullptr;
 }
+int ColeccionReservas::contarReservasActivasPorCancha(string codigoCancha) const
+{
+    int activas = 0;
+    for (int i = 0; i < cant; i++)
+    {
+        if (vec[i] != nullptr && vec[i]->getCancha() != nullptr
+            && vec[i]->getCancha()->getCodigo() == codigoCancha && vec[i]->isActiva())
+        {
+            activas++;
+        }
+    }
+    return activas;
+}
+
+int ColeccionReservas::contarReservasActivasPorCliente(string identificacion) const
+{
+    int activas = 0;
+    for (int i = 0; i < cant; i++)
+    {
+        if (vec[i] != nullptr && vec[i]->getCliente() != nullptr
+            && vec[i]->getCliente()->getIdentificacion() == identificacion && vec[i]->isActiva())
+        {
+            activas++;
+        }
+    }
+    return activas;
+}

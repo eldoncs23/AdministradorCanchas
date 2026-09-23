@@ -25,6 +25,8 @@ public:
 	int getCant()const;
 	int getMax()const;
 	Reserva* getReservaPorIndice(int indice)const;
+	int contarReservasActivasPorCancha(string codigoCancha) const;
+	int contarReservasActivasPorCliente(string identificacion) const;
 
 };
 #endif

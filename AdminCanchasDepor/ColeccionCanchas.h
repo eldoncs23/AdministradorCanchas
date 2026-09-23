@@ -17,6 +17,8 @@ public:
 	bool agregarCancha(Cancha* codigo);
 	Cancha* buscarCancha(string codigo)const;
 	void mostrarCanchas() const;
+	bool modificarPrecio(string codigo, float nuevoPrecio);
+	void mostrarDisponibilidad(string codigo) const;
 	//getters
 	int getCant()const;
 	int getMax()const;

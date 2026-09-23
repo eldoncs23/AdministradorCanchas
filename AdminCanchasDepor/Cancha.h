@@ -33,6 +33,7 @@ public:
 
     //menu visual de las franjas y estados de cada una
     void mostrarDisponibilidad(string fecha = "18/09/2026") const;
+    void cambiarDisponibilidad(int indiceFranja, char nuevoEstado);
     void mostrar() const;
 };
 #endif

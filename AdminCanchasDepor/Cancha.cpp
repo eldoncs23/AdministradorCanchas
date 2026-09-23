@@ -100,7 +100,13 @@ void Cancha::mostrarDisponibilidad(string fecha) const {
 	cout << endl;
 	cout << "L = Libre, O = Ocupada, M = Mantenimiento" << endl;
 }
-
+void Cancha::cambiarDisponibilidad(int indiceFranja, char nuevoEstado) {
+	if (indiceFranja >= 0 && indiceFranja < CANT_FRANJAS) {
+		cout << "Estado invalido";
+		return;
+		franjas[indiceFranja] = nuevoEstado;
+	}
+}
 void Cancha::mostrar() const {
     cout << " | Codigo:  " << codigo << endl;
 	cout << " | Deporte: " << deporte << endl;
