@@ -54,6 +54,23 @@ void ColeccionCanchas::mostrarCanchas() const {
 		}
 	}
 }
+bool ColeccionCanchas::modificarPrecio(string codigo, float nuevoPrecio) {
+	Cancha* cancha = buscarCancha(codigo);
+	if (cancha != nullptr) {
+		cancha->setPrecioPorHora(nuevoPrecio);
+		return true;
+	}
+	return false;
+}
+void ColeccionCanchas::mostrarDisponibilidad(string codigo) const {
+	Cancha* cancha = buscarCancha(codigo);
+	if (cancha != nullptr) {
+		cancha->mostrarDisponibilidad();
+	}
+	else {
+		cout << "Cancha no encontrada." << endl;
+	}
+}
 //getters
 int ColeccionCanchas::getCant()const {
 	return cant;
