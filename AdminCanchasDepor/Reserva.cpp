@@ -28,10 +28,10 @@ Reserva::~Reserva() {
 	cliente = nullptr; //pero si es recomendable ponerlos en nullptr
     cancha = nullptr;
 }
-const Cliente* Reserva::getCliente() const {
+Cliente* Reserva::getCliente() const {
     return cliente;
 }
-const Cancha* Reserva::getCancha() const {
+Cancha* Reserva::getCancha() const {
     return cancha;
 }
 //getters
@@ -63,7 +63,7 @@ bool Reserva::cancelarReserva() {
             cancha->liberarFranja(i);
         }
 	}
-	return true; //error corregido se retorna true para indicar que la reserva fue cancelada correctamente
+	return true; 
 }
 void Reserva::mostrar() const {
     cout << "========================================" << endl;
@@ -78,6 +78,6 @@ void Reserva::mostrar() const {
     int horaInicio = 8 + franjaInicio;
     int horaFin = horaInicio + cantidadFranjas;
     cout << "Horario: " << horaInicio << ":00 a " << horaFin << ":00 (" << cantidadFranjas << " hora/s)" << endl;
-    cout << "Monto:   Colones" << montoTotal << endl;
+    cout << "Monto:   " << montoTotal << " Colones" << endl;
     cout << "========================================" << endl;
 }

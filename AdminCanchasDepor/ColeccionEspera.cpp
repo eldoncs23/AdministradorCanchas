@@ -73,16 +73,26 @@ void ColeccionEspera::verificarNotificacionesEspera(string codigoCancha, int fra
                     cout << "===========================================" << endl;
                     hayGente = true;
                 }
-				cout<< "-> El cliente " << vec[i]->getCliente()->getNombre() 
-                    << " con identificacion " << vec[i]->getCliente()->getIdentificacion() 
-                    << " esta en espera de la cancha" << codigoCancha
-					<< " en la franja " << (fi + 8) << ":00" << endl;
+                cout << " -> Cliente: " << vec[i]->getCliente()->getNombre()
+                    << " (" << vec[i]->getCliente()->getIdentificacion() << ")"
+                    << " - Cancha:         |" << codigoCancha
+                    << " - Franja Horaria: |" << (fi + 8) << ":00 hs" << endl;
                 //se suma 8 a fi para mostrar la hora real de la franja
             }
         }
     }
+    if (!hayGente) {
+        cout << "\n[INFO] No hay clientes en lista de espera para el horario liberado." << endl;
+    }
 }
 bool ColeccionEspera::cambiarEstadoEspera(int numeroConsecutivo, char nuevoEstado) {
+    if (nuevoEstado >= 'a' && nuevoEstado <= 'z') {
+        nuevoEstado = nuevoEstado - 32;
+    }
+    if (nuevoEstado != 'E' && nuevoEstado != 'A' && nuevoEstado != 'C') {
+        return false;
+    }
+
     for (int i = 0; i < cant; i++) {
         if (vec[i] != nullptr && vec[i]->getNumeroConsecutivo() == numeroConsecutivo) {
             vec[i]->setEstado(nuevoEstado);

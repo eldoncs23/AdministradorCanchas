@@ -110,7 +110,7 @@ void Cancha::cambiarDisponibilidad(int indiceFranja, char nuevoEstado) {
 		}
 	}
 	else {
-		cout << "Índice de franja fuera de rango." << endl;
+		cout << "Índice de franja fuera de rango. Debe ser un valor entre 0 y " << CANT_FRANJAS - 1 << "." << endl;
 	}
 }
 void Cancha::mostrar() const {

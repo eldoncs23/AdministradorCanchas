@@ -41,6 +41,12 @@ Cliente* ColeccionClientes::buscarCliente(string identificacion)const {
 	}
 	return nullptr;
 }
+Cliente* ColeccionClientes::getClientePorIndice(int index) const {
+	if (index >= 0 && index < cant) {
+		return vec[index];
+	}
+	return nullptr;
+}
 void ColeccionClientes::mostrarClientes() const {
 	if(cant == 0) {
 		cout << "No hay clientes registrados." << endl;
@@ -51,8 +57,7 @@ void ColeccionClientes::mostrarClientes() const {
 	cout << "================================" << endl;
 	for (int i = 0; i < cant; i++) {
 		if(vec[i] != nullptr) {
-			vec[i]->mostrar();
-			cout << "--------------------------------" << endl;
+			cout << vec[i]->toString() << endl;
 		}
 	}
 }

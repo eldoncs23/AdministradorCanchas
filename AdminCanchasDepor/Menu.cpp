@@ -75,7 +75,7 @@ void Menu::menuCanchas() {
     do {
         system("cls");
         cout << "==============================================" << endl;
-        cout << "          GESTION DE CANCHAS" << endl;
+        cout << "          GESTION DE CANCHAS"                   << endl;
         cout << "==============================================" << endl;
         cout << "1. Registrar nueva cancha" << endl;
         cout << "2. Mostrar todas las canchas" << endl;
@@ -85,7 +85,7 @@ void Menu::menuCanchas() {
         cout << "6. Volver al menu principal" << endl;
         cout << "==============================================" << endl;
         cout << "Digite una opcion: ";
-        cin >> opcion;
+        cin >> opcion; 
 
         while (cin.fail() || opcion < 1 || opcion > 6) {
             cin.clear();
@@ -94,7 +94,7 @@ void Menu::menuCanchas() {
             cin >> opcion;
         }
         string codigo, deporte;
-        float precio;
+        float precio = 0.0;
         switch (opcion) {
         case 1: {
             system("cls");
@@ -105,7 +105,10 @@ void Menu::menuCanchas() {
             cin >> deporte;
             cout << "Digite el precio por hora/franja: ";
             cin >> precio;
-
+            /*if (precio <= 0) {
+                cout << "\nPrecio invalido. Debe ser mayor a 0." << endl;
+                break;
+            }*/
             if(cin.fail()) {
                 cin.clear();
                 cin.ignore(10000, '\n');
@@ -141,18 +144,42 @@ void Menu::menuCanchas() {
             system("pause");
             break;
         }
-        case 4:
+        case 4: {
             system("cls");
+
+            cout << "--- Modificar Precio de Cancha ---" << endl;
             cout << "Digite el codigo de la cancha a modificar: ";
             cin >> codigo;
+
+            Cancha* c = coleccionCanchas->buscarCancha(codigo); // Buscar la cancha por su código
+
+            if (c == nullptr) {
+                cout << "\nError cancha no encontrada." << endl;
+                system("pause");
+                break;
+            }
+            cout << " Precio actual de la cancha: " << c->getPrecioPorHora() << " Colones." << endl;
             cout << "Digite el nuevo precio por hora/franja: ";
             cin >> precio;
-            if (coleccionCanchas->modificarPrecio(codigo, precio))
-                cout << "\nPrecio de la cancha modificado correctamente." << endl;
-            else
-                cout << "\nError al modificar el precio. Cancha no encontrada." << endl;
+            //ya tiene validacion de entrada numerica
+            /*if (precio <= 0) {
+                cout << "\nPrecio invalido. Debe ser mayor a 0." << endl;
+                break;
+            }*/
+            if (cin.fail()) {
+                cin.clear();
+                cin.ignore(10000, '\n');
+                cout << "\nFormato invalido. Ingrese solo numeros (ej: 2000)." << endl;
+                system("pause");
+                break;
+            }
+            c->setPrecioPorHora(precio);
+            cout << "\nPrecio actualizado correctamente." << endl;
             system("pause");
             break;
+        }
+        
+        
         case 5:
             system("cls");
             cout << "Digite el codigo de la cancha: ";
@@ -162,6 +189,10 @@ void Menu::menuCanchas() {
             break;
         case 6:
             break; //regresa al menu principal
+		default:
+			cout << "\nOpcion invalida. Intente nuevamente." << endl;
+			system("pause");
+			break;
         }
     } while (opcion != 6);
 }
@@ -189,7 +220,8 @@ void Menu::menuClientes() {
             cin >> opcion;
         }
 
-        string identificacion, nombre, telefono;
+        string identificacion, nombre, telefono, apellido;
+		
 
         switch (opcion) {
         case 1:
@@ -199,10 +231,13 @@ void Menu::menuClientes() {
             cin >> identificacion;
             cout << "Digite el nombre del cliente: ";
             cin >> nombre;
+            cout << "Digite el apellido del cliente: ";
+            cin >> apellido;
             cout << "Digite el telefono del cliente: ";
             cin >> telefono;
 
-            if (coleccionClientes->agregarCliente(new Cliente(identificacion, nombre, telefono)))
+			
+            if (coleccionClientes->agregarCliente(new Cliente(identificacion, nombre, apellido, telefono)))
                 cout << "\nCliente registrado correctamente." << endl;
             else
                 cout << "\nError al registrar cliente. Identificacion ya registrada." << endl;
@@ -242,6 +277,10 @@ void Menu::menuClientes() {
 
         case 5:
             break;
+		/*default:
+			cout << "\nOpcion invalida. Intente nuevamente." << endl;
+			system("pause");
+			break;*/
         }
     } while (opcion != 5);
 }
@@ -256,7 +295,7 @@ void Menu::menuReservas() {
         cout << "1. Registrar reserva" << endl;
         cout << "2. Mostrar todas las reservas" << endl;
         cout << "3. Cambio de disponibilidad de franja" << endl;
-        cout << "4. Buscar reserva por numero consecutivo" << endl;
+        cout << "4. Buscar reserva por numero numero de reserva" << endl;
         cout << "5. Mostrar reservas asociadas a una cancha" << endl;
         cout << "6. Cancelar reserva" << endl;
         cout << "7. Volver al menu principal" << endl;
@@ -273,7 +312,7 @@ void Menu::menuReservas() {
 
         string identificacion, codigo;
         char estado;
-        int franjaInicio, cantidadFranjas, numeroReserva;
+        int franjaInicio = 0, cantidadFranjas =0, numeroReserva = 0;
 
         switch (opcion) {
         case 1: {
@@ -299,25 +338,32 @@ void Menu::menuReservas() {
                 break;
             }
 
-			// Guía de franjas horarias para el usuario
+			// Guía de franjas horarias para el usuario 
             cout << "\n-----------------------------------------------------" << endl;
-            cout << "GUIA DE FRANJAS HORARIAS (0 a 13):" << endl;
-            cout << " 0: 06:00-07:00 |  1: 07:00-08:00 |  2: 08:00-09:00" << endl;
-            cout << " 3: 09:00-10:00 |  4: 10:00-11:00 |  5: 11:00-12:00" << endl;
-            cout << " 6: 12:00-13:00 |  7: 13:00-14:00 |  8: 14:00-15:00" << endl;
-            cout << " 9: 15:00-16:00 | 10: 16:00-17:00 | 11: 17:00-18:00" << endl;
-            cout << "12: 18:00-19:00 | 13: 19:00-20:00" << endl;
-            cout << "-----------------------------------------------------" << endl;
+            cout << "GUIA DE FRANJAS HORARIAS (0 a 11):" << endl;
+            cout << " 0: 08:00-09:00 |  1: 09:00-10:00 |  2: 10:00-11:00" << endl;
+            cout << " 3: 11:00-12:00 |  4: 12:00-13:00 |  5: 13:00-14:00" << endl;
+            cout << " 6: 14:00-15:00 |  7: 15:00-16:00 |  8: 16:00-17:00" << endl;
+            cout << " 9: 17:00-18:00 | 10: 18:00-19:00 | 11: 19:00-20:00" << endl;
 
-            cout << "Digite la Franja de inicio (0 - 13): ";
+            cout << "Digite la Franja de inicio (0 - 11): ";
             cin >> franjaInicio;
-            cout << "Digite la cantidad de franjas continuas a reservar (ej. 1 u 8): ";
+            if (franjaInicio < 0 || franjaInicio > 11) {
+                cout << "\nError: La franja " << franjaInicio << " es invalida. Debe digitar un numero entre 0 y 11." << endl;
+                system("pause");
+                break;
+            }
+            cout << "Digite la cantidad de franjas continuas a reservar (ej. 1 u 12): ";
             cin >> cantidadFranjas;
 
+            if (franjaInicio < 0 || (franjaInicio + cantidadFranjas) >12) {
+                cout << "\nError: La cantidad de franjas excede el horario permitido del dia (maximo hasta la franja 11)." << endl;
+                system("pause");
+                break;
+            }
             if (coleccionReservas->registrarReserva(cli, can, franjaInicio, cantidadFranjas)) {
                 cout << "\nReserva registrada correctamente." << endl;
-            }
-            else {
+            } else {
                 cout << "\nError al registrar reserva. Las franjas solicitadas estan ocupadas o fuera de rango." << endl;
             }
             system("pause");
@@ -333,10 +379,16 @@ void Menu::menuReservas() {
 
         case 3:
             system("cls");
+            cout << "--- CAMBIO DE DISPONIBILIDAD DE FRANJA ---" << endl;
             cout << "Digite el codigo de la cancha: ";
             cin >> codigo;
-            cout << "Digite el numero de franja (0 - 13): ";
+            cout << "Digite el numero de franja (0 - 11): ";
             cin >> franjaInicio;
+            if (franjaInicio < 0 || franjaInicio > 11) {
+                cout << "\nError: Indice de franja invalido. Debe ser un numero entre 0 y 11." << endl;
+                system("pause");
+                break;
+            }
             cout << "Digite la nueva disponibilidad (O=Ocupada, L=Libre, M=Mantenimiento): ";
             cin >> estado;
 
@@ -381,7 +433,7 @@ void Menu::menuReservas() {
             system("cls");
             cout << "Digite el numero de reserva a cancelar: ";
             cin >> numeroReserva;
-            if (coleccionReservas->cancelarReserva(numeroReserva))
+            if (coleccionReservas->cancelarReserva(numeroReserva, coleccionEspera))
                 cout << "\nReserva cancelada exitosamente y franjas liberadas." << endl;
             else
                 cout << "\nError al cancelar. No existe una reserva con ese numero." << endl;
@@ -390,6 +442,10 @@ void Menu::menuReservas() {
 
         case 7:
             break;
+		/*default:
+			cout << "\nOpcion invalida. Intente nuevamente." << endl;
+			system("pause");
+			break;*/
         }
     } while (opcion != 7);
 }
@@ -415,10 +471,11 @@ void Menu::menuEsperas() {
             cout << "Opcion invalida. Digite un numero entre 1 y 4: ";
             cin >> opcion;
         }
+        
 
         string identificacion, codigoCancha;
         char estado;
-        int franjaHoraria, numeroEspera;
+        int franjaHoraria =0, numeroEspera = 0;
 
         switch (opcion) {
         case 1: {
@@ -444,13 +501,34 @@ void Menu::menuEsperas() {
                 break;
             }
 
-            cout << "Digite la franja horaria deseada (0 - 13): ";
+            cout << "Digite la franja horaria deseada (0 - 11): ";
             cin >> franjaHoraria;
 
-            if (coleccionEspera->agregarEspera(cli, can, franjaHoraria))
-                cout << "\nSolicitud en lista de espera agregada exitosamente." << endl;
-            else
-                cout << "\nError al registrar la solicitud en lista de espera." << endl;
+            if (cin.fail() || franjaHoraria < 0 || franjaHoraria > 11) {
+                cin.clear();
+                cin.ignore(10000, '\n');
+                cout << "\nError: Franja horaria invalida (debe ser un entero entre 0 y 11)." << endl;
+                system("pause");
+                break;
+            }
+
+            //verificacion de reglas
+			char estadoFranja = can->getEstadoFranja(franjaHoraria);
+
+            if (estadoFranja == 'L') {
+                cout << "\nAtencion: La franja se encuentra LIBRE. Puede reservar directamente en el Modulo de Reservas." << endl;
+            }
+            else if (estadoFranja == 'M') {
+                cout << "\nAtencion: La cancha está en MANTENIMIENTO en esa franja. No se admiten registros en lista de espera." << endl;
+            }
+            else if (estadoFranja == 'O') {
+                if (coleccionEspera->agregarEspera(cli, can, franjaHoraria)) {
+                    cout << "\nSolicitud en lista de espera agregada exitosamente." << endl;
+                }
+                else {
+                    cout << "\nError: Lista de espera llena (maximo 10) o el cliente ya esta registrado para esta misma cancha y franja." << endl;
+                }
+            }
 
             system("pause");
             break;
@@ -479,6 +557,10 @@ void Menu::menuEsperas() {
 
         case 4:
             break;
+		/*default:
+			cout << "\nOpcion invalida. Intente nuevamente." << endl;
+			system("pause");
+			break;*/
         }
     } while (opcion != 4);
 }
@@ -499,13 +581,13 @@ void Menu::menuReportes() {
         cout << "==============================================" << endl;
         cout << "Digite una opcion (1-6): ";
         cin >> opcion;
-
         while (cin.fail() || opcion < 1 || opcion > 6) {
             cin.clear();
             cin.ignore(10000, '\n');
             cout << "Opcion invalida. Digite entre 1 y 6: ";
             cin >> opcion;
         }
+        
 
         system("cls");
         switch (opcion) {
@@ -531,6 +613,10 @@ void Menu::menuReportes() {
             break;
         case 6:
             break;
+            /*default:
+			cout << "Opcion invalida. Intente nuevamente." << endl;
+			system("pause");
+			break;*/
         }
     } while (opcion != 6);
 }

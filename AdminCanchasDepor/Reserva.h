@@ -23,8 +23,8 @@ public:
     Reserva();
     Reserva(Cliente* cliente, Cancha* cancha, int franjaInicio, int cantidadFranjas);
     ~Reserva();
-	const Cliente* getCliente() const; // se usa const para indicar que el puntero no se puede modificar y que la función no modifica el objeto
-    const Cancha* getCancha() const;
+	Cliente* getCliente() const; // se usa const para indicar que el puntero no se puede modificar y que la función no modifica el objeto
+    Cancha* getCancha() const;
 	//getters
     int getNumeroReserva() const;
     int getFranjaInicio() const;

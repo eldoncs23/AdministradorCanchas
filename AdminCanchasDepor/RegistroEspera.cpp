@@ -50,7 +50,7 @@ string RegistroEspera::getEstadoTexto() const {
 	case 'E':
 		return "ESPERANDO";
 	case 'A':
-		return "ATENDIDO/ASIGNADO";
+		return "ASIGNADO";
 	case 'C':
 		return "CANCELADO";
 	default:
@@ -68,11 +68,13 @@ void RegistroEspera::mostrar() const {
 	cout << "----------------------------------------" << endl;
 	cout << " REGISTRO DE ESPERA #" << numeroConsecutivo << endl;
 	if (cliente != nullptr) {
-		cout << "Cliente: " << cliente->getNombre() << " (" << cliente->getIdentificacion() << ")" << endl;
+		cout << " Cliente: " << cliente->getNombre() << " (" << cliente->getIdentificacion() << ")" << endl;
 	}
 	if (cancha != nullptr) {
-		cout << "Cancha:  " << cancha->getCodigo() << endl;
+		cout << " Cancha:  " << cancha->getCodigo() << endl;
 	}
-	cout << " Franja: " << (8+ posicionFranja) << ":00 a " << (9+ posicionFranja) << ":00" << endl;
-	cout << " Estado: " << getEstadoTexto() << endl;
+	int horaInicio = 8 + posicionFranja;
+	int horaFin = 9 + posicionFranja;
+	cout << " Franja:  " << (horaInicio < 10 ? "0" : "") << horaInicio << ":00 a " << (horaFin < 10 ? "0" : "") << horaFin << ":00 (Franja " << posicionFranja << ")" << endl;
+	cout << " Estado:  " << getEstadoTexto() << endl;
 }
