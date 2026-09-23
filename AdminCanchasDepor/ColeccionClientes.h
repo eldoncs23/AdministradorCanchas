@@ -18,6 +18,8 @@ public:
 	//metodos
 	bool agregarCliente(Cliente* cliente);
 	Cliente* buscarCliente(string identificacion)const;
+	// metodo indispensable para iterar en la clase Reportes
+	Cliente* getClientePorIndice(int index) const;
 	void mostrarClientes()const;
 
 	int getCant()const;

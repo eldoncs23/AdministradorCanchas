@@ -1,6 +1,7 @@
 #ifndef COLECCIONRESERVAS_H
 #define COLECCIONRESERVAS_H
 #include "Reserva.h"
+#include "ColeccionEspera.h"
 #include <iostream>
 #include <string>
 
@@ -16,7 +17,7 @@ public:
 	~ColeccionReservas();
 	bool registrarReserva(Cliente* cliente, Cancha* cancha, int franjaInicio, int cantidadFranjas);
 	Reserva* buscarReserva(int numeroReserva)const;
-	bool cancelarReserva(int numeroReserva);
+	bool cancelarReserva(int numeroReserva, ColeccionEspera* coleccionEspera);
 
 	void mostrarTodasReservas() const;
 	void mostrarReservasPorCliente(string identificacion) const;

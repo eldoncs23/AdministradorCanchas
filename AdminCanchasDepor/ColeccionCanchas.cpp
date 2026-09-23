@@ -22,21 +22,22 @@ bool ColeccionCanchas::agregarCancha(Cancha* cancha) {
 		//verificar que el puntero no sea nulo y que no se haya alcanzado la capacidad máxima
 		return false;
 	}
-	if (buscarCancha(cancha->getCodigo()) == nullptr) { 
+	if (buscarCancha(cancha->getCodigo()) != nullptr) { 
 		//verificar que no exista la misma cancha por codigo
-		return true;
-	}
+		
+		return false;
+	} 
 	vec[cant] = cancha;
 	cant++;
-	return false;
+	return true;
 }
 Cancha* ColeccionCanchas::buscarCancha(string codigo)const {
 	for (int i = 0; i < cant; i++) {
 		if (vec[i] != nullptr && vec[i]->getCodigo() == codigo) {
-			return vec[i];
+			return vec[i]; //retorna el puntero a la cancha encontrada
 		}
 	}
-	return nullptr;
+	return nullptr; //retorna nullptr si no se encuentra la cancha
 }
 void ColeccionCanchas::mostrarCanchas() const {
 	if (cant == 0) {

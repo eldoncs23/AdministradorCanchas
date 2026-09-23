@@ -13,7 +13,7 @@ public:
     
     //estadisticas
 	static void clienteConMasReservasActivas(const ColeccionClientes& clientes, const ColeccionReservas& reservas);
-	static void canchaConMasReservasActivas(const ColeccionCanchas& canchas, const ColeccionReservas& reservas);
+	static void canchaConMasReservasActivas(const ColeccionCanchas& coleccionCanchas, const ColeccionReservas& coleccionReservas);
 	static void ingresoTotalReservasActivas(const ColeccionReservas& reservas);
 	static void porcentajeOcupacionPorCancha(const ColeccionCanchas& canchas, const ColeccionReservas& reservas);
 	static void horasMayorYMenorDemanda(const ColeccionReservas& reservas, int totalFranjasDia = 24);

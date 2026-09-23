@@ -1,61 +1,49 @@
 #include "Reportes.h"
-void Reportes::canchaConMasReservasActivas(const ColeccionCanchas& canchas, const ColeccionReservas& reservas) {
+
+void Reportes::canchaConMasReservasActivas(const ColeccionCanchas& coleccionCanchas, const ColeccionReservas& coleccionReservas) {
     cout << "\n========================================================" << endl;
     cout << "   REPORTE: CANCHA CON MAYOR CANTIDAD DE RESERVAS ACTIVAS" << endl;
     cout << "========================================================" << endl;
-
-    if (canchas.getCant() == 0) {
-        cout << "No hay canchas registradas en el sistema." << endl;
-        return;
-    }
-
-    cout << "DETALLE DE RESERVAS POR CANCHA:" << endl;
-    cout << "--------------------------------------------------------" << endl;
-
-    int maxReservas = -1;
-    Cancha* canchaGanadora = nullptr;
-
-    // recorrer cada cancha para contar sus reservas activas
-    for (int i = 0; i < canchas.getCant(); i++) {
-        Cancha* canchaActual = canchas.getCanchaPorIndice(i);
-        if (canchaActual == nullptr) continue;
-
-        int contadorActivas = 0;
-
-        // recorrer todas las reservas
-        for (int j = 0; j < reservas.getCant(); j++) {
-            Reserva* res = reservas.getReservaPorIndice(j);
-            if (res != nullptr && res->isActiva()) {
-                // comprobar si la reserva pertenece a la cancha actual
-                if (res->getCancha() != nullptr && res->getCancha()->getCodigo() == canchaActual->getCodigo()) {
-                    contadorActivas++;
-                }
+	int totalCanchas = coleccionCanchas.getCant();
+	if (totalCanchas == 0) {
+		cout << "No hay canchas registradas en el sistema." << endl;
+		return;
+	}
+	cout << "DETALLE DE RESERVAS POR CANCHA:" << endl;
+	cout << "--------------------------------------------------------" << endl;
+	int maxReservas = 0;
+    for (int i = 0; i < totalCanchas; i++) {
+        Cancha* canchaActual = coleccionCanchas.getCanchaPorIndice(i);
+        if (canchaActual != nullptr) {
+            int conteo = coleccionReservas.contarReservasActivasPorCancha(canchaActual->getCodigo());
+            if (conteo > maxReservas) {
+                maxReservas = conteo;
             }
         }
-
-        cout << "Cancha: " << canchaActual->getCodigo()
-            << " | Reservas Activas: " << contadorActivas << endl;
-
-        if (contadorActivas > maxReservas) {
-            maxReservas = contadorActivas;
-            canchaGanadora = canchaActual;
+    }
+    // Si el maximo es 0, no hay reservas activas registradas para ninguna cancha
+    if (maxReservas == 0) {
+        cout << "NO existen reservas activas en el sistema actualmente." << endl;
+        return;
+    }
+	//imprimir las canchas que empatan en el máximo de reservas activas
+    cout << "Mayor cantidad de reservas activas encontradas: " << maxReservas << endl << endl;
+    for (int i = 0; i < totalCanchas; i++) {
+        Cancha* canchaActual = coleccionCanchas.getCanchaPorIndice(i);
+        if (canchaActual != nullptr) {
+            int conteo = coleccionReservas.contarReservasActivasPorCancha(canchaActual->getCodigo());
+            if (conteo == maxReservas) {
+                canchaActual->mostrar();
+                cout << "Total de reservas activas: " << conteo << endl;
+                cout << "-----------------------------------------------------" << endl;
+            }
         }
     }
-
-    cout << "--------------------------------------------------------" << endl;
-    if (canchaGanadora != nullptr && maxReservas > 0) {
-        cout << "RESULTADO:" << endl;
-        cout << "La cancha con mayor cantidad de reservas activas es: "
-            << canchaGanadora->getCodigo() << " con " << maxReservas << " reserva(s)." << endl;
-    }
-    else {
-        cout << "RESULTADO: No existen reservas activas actualmente." << endl;
-    }
-    cout << "========================================================\n" << endl;
+    
 }
 void Reportes::clienteConMasReservasActivas(const ColeccionClientes& clientes, const ColeccionReservas& reservas) {
     cout << "\n========================================================" << endl;
-    cout << "  REPORTE: CLIENTE CON MAYOR CANTIDAD DE RESERVAS ACTIVAS" << endl;
+    cout << "   REPORTE: CLIENTE CON MAYOR CANTIDAD DE RESERVAS ACTIVAS" << endl;
     cout << "========================================================" << endl;
 
     if (clientes.getCant() == 0) {
@@ -66,43 +54,44 @@ void Reportes::clienteConMasReservasActivas(const ColeccionClientes& clientes, c
     cout << "DETALLE DE RESERVAS POR CLIENTE:" << endl;
     cout << "--------------------------------------------------------" << endl;
 
-    int maxReservas = -1;
-    const Cliente* clienteGanador = nullptr; // se cambia a const Cliente* para coincidir con res->getCliente()
+    int maxReservas = 0;
 
-    // recorremos las reservas para evaluar cada cliente
-    for (int i = 0; i < reservas.getCant(); i++) {
-        const Reserva* res = reservas.getReservaPorIndice(i);
-        if (res != nullptr && res->isActiva() && res->getCliente() != nullptr) {
-            string idCliente = res->getCliente()->getIdentificacion();
+	// recorrer cada cliente para contar sus reservas activas
+    for (int i = 0; i < clientes.getCant(); i++) {
+        Cliente* clienteActual = clientes.getClientePorIndice(i);
+        if (clienteActual == nullptr) continue;
 
-            // contar cuantas reservas activas tiene este cliente
-            int contadorActivas = 0;
-            for (int j = 0; j < reservas.getCant(); j++) {
-                const Reserva* r2 = reservas.getReservaPorIndice(j);
-                if (r2 != nullptr && r2->isActiva() && r2->getCliente() != nullptr) {
-                    if (r2->getCliente()->getIdentificacion() == idCliente) {
-                        contadorActivas++;
-                    }
-                }
-            }
+        int contadorActivas = reservas.contarReservasActivasPorCliente(clienteActual->getIdentificacion());
 
-            if (contadorActivas > maxReservas) {
-                maxReservas = contadorActivas;
-                clienteGanador = res->getCliente(); // ahora la asignacion es valida
-            }
+        cout << "Cliente: " << clienteActual->getNombre()
+            << " (" << clienteActual->getIdentificacion() << ")"
+            << " | Reservas Activas: " << contadorActivas << endl;
+
+        if (contadorActivas > maxReservas) {
+            maxReservas = contadorActivas;
         }
     }
 
-    if (clienteGanador != nullptr && maxReservas > 0) {
-        cout << "Cliente: " << clienteGanador->getNombre()
-            << " (ID: " << clienteGanador->getIdentificacion() << ")" << endl;
-        cout << "--------------------------------------------------------" << endl;
-        cout << "RESULTADO:" << endl;
-        cout << "El cliente con mas reservas activas es " << clienteGanador->getNombre()
-            << " con un total de " << maxReservas << " reserva(s)." << endl;
+    cout << "--------------------------------------------------------" << endl;
+    if (maxReservas == 0) {
+        cout << "RESULTADO: No existen reservas activas actualmente." << endl;
+        cout << "===================================================\n" << endl;
+        return;
     }
-    else {
-        cout << "RESULTADO: No hay reservas activas registradas para ningun cliente." << endl;
+
+    // imprimir los clientes que empatan en el máximo de reservas
+    cout << "RESULTADO: Cliente(s) con mayor cantidad de reservas activas (" << maxReservas << "):" << endl;
+    for (int i = 0; i < clientes.getCant(); i++) {
+        Cliente* clienteActual = clientes.getClientePorIndice(i);
+        if (clienteActual == nullptr) continue;
+
+        int contadorActivas = reservas.contarReservasActivasPorCliente(clienteActual->getIdentificacion());
+
+        if (contadorActivas == maxReservas) {
+            cout << " -> Cliente: " << clienteActual->getNombre()
+                << " | ID: " << clienteActual->getIdentificacion()
+                << " | Reservas Activas: " << contadorActivas << endl;
+        }
     }
     cout << "========================================================\n" << endl;
 }
@@ -124,24 +113,40 @@ void Reportes::ingresoTotalReservasActivas(const ColeccionReservas& reservas) {
 
     for (int i = 0; i < reservas.getCant(); i++) {
         Reserva* res = reservas.getReservaPorIndice(i);
+
+        // verificamos que la reserva exista y esté activa
         if (res != nullptr && res->isActiva()) {
-            double montoReserva = res->getMontoTotal(); // O calculo: res->getCantidadFranjas() * precio
+            double montoReserva = res->getMontoTotal();
             ingresoTotal += montoReserva;
             contadorActivas++;
 
+            // obtener el nombre del cliente de forma segura
+            string nombreCliente = "N/A";
+            if (res->getCliente() != nullptr) {
+                nombreCliente = res->getCliente()->getNombre();
+            }
+
+			// obtener el código de la cancha de forma segura
+            string codigoCancha = "N/A";
+            if (res->getCancha() != nullptr) {
+                codigoCancha = res->getCancha()->getCodigo();
+            }
+
+			// imprimir la información de la reserva activa
             cout << "Reserva #" << res->getNumeroReserva()
-                << " | Cliente: " << (res->getCliente() ? res->getCliente()->getNombre() : "N/A")
-                << " | Cancha: " << (res->getCancha() ? res->getCancha()->getCodigo() : "N/A")
+                << " | Cliente: " << nombreCliente
+                << " | Cancha: " << codigoCancha
                 << " | Franjas: " << res->getCantidadFranjas()
-                << " | Monto: $" << montoReserva << endl;
+                << " | Monto: " << montoReserva << " Colones" << endl;
         }
     }
 
     cout << "--------------------------------------------------------" << endl;
     cout << "TOTAL DE RESERVAS ACTIVAS: " << contadorActivas << endl;
-    cout << "INGRESO TOTAL GENERADO   : $" << ingresoTotal << endl;
+    cout << "INGRESO TOTAL GENERADO   : " << ingresoTotal << " Colones" << endl;
     cout << "========================================================\n" << endl;
 }
+
 void Reportes::porcentajeOcupacionPorCancha(const ColeccionCanchas& canchas, const ColeccionReservas& reservas) {
     cout << "\n========================================================" << endl;
     cout << "     REPORTE: PORCENTAJE DE OCUPACION POR CANCHA" << endl;
@@ -152,7 +157,7 @@ void Reportes::porcentajeOcupacionPorCancha(const ColeccionCanchas& canchas, con
         return;
     }
 
-    const int TOTAL_FRANJAS_DIA = 24; // O la cantidad total de franjas configuradas por jornada
+    const int TOTAL_FRANJAS_DIA = 12; //12 franjas horarias segun enunciado
 
     cout << "DETALLE DE OCUPACION (Sobre " << TOTAL_FRANJAS_DIA << " franjas diarias totales):" << endl;
     cout << "--------------------------------------------------------" << endl;
@@ -186,13 +191,13 @@ void Reportes::horasMayorYMenorDemanda(const ColeccionReservas& reservas, int to
     cout << "   REPORTE: HORAS CON MAYOR Y MENOR DEMANDA DE RESERVAS" << endl;
     cout << "========================================================" << endl;
 
-    // Crear arreglo dinamico para contar reservas por cada franja horaria
+    // Arreglo dinámico según las franjas especificadas (12 franjas: 0 a 11)
     int* conteoFranjas = new int[totalFranjasDia];
     for (int i = 0; i < totalFranjasDia; i++) {
         conteoFranjas[i] = 0;
     }
 
-    // Contabilizar cuantas reservas ocupan cada franja
+    // Contabilizar franjas ocupadas por reservas activas
     for (int i = 0; i < reservas.getCant(); i++) {
         Reserva* res = reservas.getReservaPorIndice(i);
         if (res != nullptr && res->isActiva()) {
@@ -205,16 +210,28 @@ void Reportes::horasMayorYMenorDemanda(const ColeccionReservas& reservas, int to
         }
     }
 
-    cout << "DETALLE DE DEMANDA POR FRANJA HORARIA:" << endl;
+    cout << "DETALLE DE DEMANDA POR FRANJA HORARIA (08:00 A 20:00):" << endl;
     cout << "--------------------------------------------------------" << endl;
+
+    // Mostrar en dos columnas si son 12 franjas para mejorar visualización
+    if (totalFranjasDia == 12) {
+        for (int i = 0; i < 6; i++) {
+            int h1 = 8 + i;
+            int h2 = 8 + i + 6;
+            cout << "Franja " << (i < 10 ? " " : "") << i << " (" << (h1 < 10 ? "0" : "") << h1 << ":00-" << (h1 + 1 < 10 ? "0" : "") << h1 + 1 << ":00): " << conteoFranjas[i] << " res. | "
+                 << "Franja " << (i + 6 < 10 ? " " : "") << i + 6 << " (" << h2 << ":00-" << (h2 + 1 < 10 ? "0" : "") << h2 + 1 << ":00): " << conteoFranjas[i + 6] << " res." << endl;
+        }
+    }
+    else {
+        for (int i = 0; i < totalFranjasDia; i++) {
+            int h = 8 + i;
+            cout << "Franja " << i << " (" << (h < 10 ? "0" : "") << h << ":00-" << (h + 1 < 10 ? "0" : "") << h + 1 << ":00): " << conteoFranjas[i] << " reserva(s)" << endl;
+        }
+    }
 
     int maxDemanda = conteoFranjas[0];
     int minDemanda = conteoFranjas[0];
-
-    for (int i = 0; i < totalFranjasDia; i++) {
-        cout << "Franja " << i << " (Hora " << i << ":00): "
-            << conteoFranjas[i] << " reserva(s)" << endl;
-
+    for (int i = 1; i < totalFranjasDia; i++) {
         if (conteoFranjas[i] > maxDemanda) maxDemanda = conteoFranjas[i];
         if (conteoFranjas[i] < minDemanda) minDemanda = conteoFranjas[i];
     }
@@ -222,24 +239,22 @@ void Reportes::horasMayorYMenorDemanda(const ColeccionReservas& reservas, int to
     cout << "--------------------------------------------------------" << endl;
     cout << "RESULTADOS:" << endl;
 
-    cout << "- Franja(s) de MAYOR demanda (" << maxDemanda << " reservas): ";
+    cout << "- Franja(s) de MAYOR demanda (" << maxDemanda << " reservas):" << endl;
     for (int i = 0; i < totalFranjasDia; i++) {
         if (conteoFranjas[i] == maxDemanda) {
-            cout << "[Franja " << i << "] ";
+            int h = 8 + i;
+            cout << "  * Franja " << i << " (" << (h < 10 ? "0" : "") << h << ":00 a " << (h + 1 < 10 ? "0" : "") << h + 1 << ":00)" << endl;
         }
     }
-    cout << endl;
 
-    cout << "- Franja(s) de MENOR demanda (" << minDemanda << " reservas): ";
+    cout << "- Franja(s) de MENOR demanda (" << minDemanda << " reservas):" << endl;
     for (int i = 0; i < totalFranjasDia; i++) {
         if (conteoFranjas[i] == minDemanda) {
-            cout << "[Franja " << i << "] ";
+            int h = 8 + i;
+            cout << "  * Franja " << i << " (" << (h < 10 ? "0" : "") << h << ":00 a " << (h + 1 < 10 ? "0" : "") << h + 1 << ":00)" << endl;
         }
     }
-    cout << endl;
 
-    // Liberar memoria dinamica del arreglo auxiliar
     delete[] conteoFranjas;
-
     cout << "========================================================\n" << endl;
 }

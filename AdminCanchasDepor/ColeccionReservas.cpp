@@ -49,16 +49,31 @@ Reserva* ColeccionReservas::buscarReserva(int numeroReserva)const {
     }
     return nullptr;
 }
-bool ColeccionReservas::cancelarReserva(int numeroReserva) {
+bool ColeccionReservas::cancelarReserva(int numeroReserva, ColeccionEspera* coleccionEspera) {
     
-	Reserva* reserva = buscarReserva(numeroReserva); //buscar la reserva por numero
-	if (reserva == nullptr || !reserva->isActiva()) { //verificar que la reserva exista y esté activa
-		return false; //no se encontró la reserva
-	}
-    //cambiar estado de la reserva
-	reserva->cancelarReserva(); //utilizamos el metodo cancelarReserva de la clase Reserva para cambiar el estado de la reserva
-    
-    return true;
+    Reserva* reserva = buscarReserva(numeroReserva); // Buscar la reserva por número
+    if (reserva == nullptr || !reserva->isActiva()) { // Verificar que exista y esté activa
+        return false; // No se encontró o ya estaba cancelada
+    }
+
+	// guardar datos de la reserva antes de cancelarla, para notificar a la colección de espera
+    string codigoCancha = "";
+    if (reserva->getCancha() != nullptr) {
+        codigoCancha = reserva->getCancha()->getCodigo();
+    }
+    int franjaInicio = reserva->getFranjaInicio();
+    int cantidadFranjas = reserva->getCantidadFranjas();
+
+	// cambiar el estado de la reserva a cancelada y liberar las franjas de la cancha
+    bool exito = reserva->cancelarReserva();
+
+	// notificar a la colección de espera si la reserva fue cancelada exitosamente y si se proporcionó una colección de espera válida
+    if (exito && coleccionEspera != nullptr && codigoCancha != "") {
+        coleccionEspera->verificarNotificacionesEspera(codigoCancha, franjaInicio, cantidadFranjas);
+    }
+
+    // retornar el resultado de la operación de cancelación
+    return exito;
 }
 
 void ColeccionReservas::mostrarTodasReservas() const {
