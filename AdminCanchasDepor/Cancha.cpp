@@ -1,5 +1,5 @@
 #include "Cancha.h"
-
+// Constructor por defecto
 Cancha::Cancha() {
     codigo = "";
     deporte = "";
@@ -14,7 +14,7 @@ Cancha::Cancha(string codigo, string deporte, float precioPorHora) {
     this->deporte = deporte;
 	this->precioPorHora = precioPorHora;
 	for (int i = 0; i < CANT_FRANJAS; i++) {
-		franjas[i] = 'L';
+		franjas[i] = 'L'; // Inicializar todas las franjas como libres
 	}
 }
 
@@ -102,9 +102,15 @@ void Cancha::mostrarDisponibilidad(string fecha) const {
 }
 void Cancha::cambiarDisponibilidad(int indiceFranja, char nuevoEstado) {
 	if (indiceFranja >= 0 && indiceFranja < CANT_FRANJAS) {
-		cout << "Estado invalido";
-		return;
-		franjas[indiceFranja] = nuevoEstado;
+		if (nuevoEstado == 'L' || nuevoEstado == 'O' || nuevoEstado == 'M') {
+			franjas[indiceFranja] = nuevoEstado;
+		}
+		else {
+			cout << "Estado invalido. Use 'L' para Libre, 'O' para Ocupada o 'M' para Mantenimiento." << endl;
+		}
+	}
+	else {
+		cout << "Índice de franja fuera de rango." << endl;
 	}
 }
 void Cancha::mostrar() const {
