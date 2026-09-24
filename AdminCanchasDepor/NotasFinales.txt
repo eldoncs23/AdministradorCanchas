@@ -1,0 +1,106 @@
+Universidad Nacional de Costa Rica
+Programación 1 - Johnny Flores Araya
+Proyecto: Administrador de Canchas Deportivas
+Estudiantes:
+- Carlos Brenes Lopez
+- Eldon Caldwell Salazar
+
+
+Aclaracion de tildes, no se usaron tildes para que el programa no se rompa, no logramos levantar esa restriccion
+
+Aclaracion de metodos implementados en el programa:
+
+métodos con ayuda con Inteligencia Artificial
+
+void Reportes::canchaConMasReservasActivas(const ColeccionCanchas& coleccionCanchas, const ColeccionReservas& coleccionReservas)
+NOTAS: "usar los prints dentro de los métodos fue un error estructural que tuvimos
+pudimos imprimir los " - (Carlos)
+
+- el propósito de este método es identificar la o las canchas (en caso de empate) con 
+la mayor cantidad de reservas en estado activo en el sistema, para ello necesita conocer
+por referencia const a la colección de canchas y reservas, ya que estas 2 alojan a los clientes
+que a su vez hicieron reservas, con esas reservas se determina a 1 o mas ganadores si es que hay empate.
+se usa paso por referencia para no tener que pasar las colecciones enteras ya que son más pesadas, mejor una copia
+del objeto en memoria. Al usar const nos aseguramos que solo vamos a leer no modificar.
+
+como sabemos el máximo de reservas por cancha? 
+1. Recorrer la lista de 0 a totalCanchas -1 (ya que es un vector)
+2. asegurarse de que no haya canchas nulas "nullptr"
+3. pedirle a colección de reservas que le devuelva el total de reservas activas
+	filtradas por el código de esa cancha.
+4. si el conteo es mayor a maxReservas, actualiza la variable maxReservas = conteo.
+
+Filtrar y imprimir
+1. recorre nuevamente el arreglo
+2. evalúa el conteo de reserva por cancha
+3. si el conteo es igual al Max previo, la imprime
+
+-si hay 2 o mas canchas empatadas, va a imprimir todos sin excluir
+
+memoria
+1. automática, totalCanchas, maxReservas, conteo
+2. dinamico en el puntero Cancha* canchaActual, apunta a memoria que viene de colecciones
+no usa new o delete por que es un const que solo lee
+
+validación de apuntadores
+1. if canchaActual != nullptr esto previene el fallo por punteros nulos
+
+(ELDON)
+
+void Reportes::clienteConMasReservasActivas(const ColeccionClientes& clientes, const ColeccionReservas& reservas)
+
+la lógica es parecida al método anterior, solo que si hay una sentencia de control llamada "continue"
+antes el if,  cuando el programa ejecuta un bucle en este caso un for, para recorrer cada cliente para contar las
+reservas activas... interrumpe inmediatamente la iteración actual  y salta directamente a la evaluación
+de la siguiente iteración, ósea al i++  y la condición de parada del bucle.
+posible cambio: anidar el bloque dentro de otro if por ejemplo.
+ventajas: si la posición i del arreglo d inamico de clientes contiene un puntero nulo, un hueco de eliminación
+o una celda no inicializada-, "continue" impide que el programa invoque:
+clienteActual->getIdentificacion(), lo que podría crashear el programa.
+
+diferencias con el de canchas:
+1. imprime la info de cada cliente e indica cuantas reservas tiene
+2- al mismo tiempo evalúa si el contadorActivas es mayor a el maxReservas, para ir actualizando maxReservas
+
+3- si luego de revisar todos los clientes esa variable maxReservas es igual a 0, se concluye que no hay
+reseras activas en todo el programa, imprime el mensaje para avisar y termina con return.
+
+Resolución de empates tiene algo diferente al método de canchas:
+4- recorre la colección y, apoyando en el continue para saltar posiciones nulas, filtra e imprime únicamente el cliente o los clientes empatados, cuyos conteos sea igual a maxReservas
+
+Memoria
+5- maxReservas, contadorActivas, i .. son locales automáticas que se destruyen al salir del bloque
+6- Cliente* clienteActual es un puntero que almacena una dirección hacia un objeto cliente, que reside en el montículo dentro de colección clientes
+7- sin new ni delete: el método es puramente de lectura
+
+(eldon)
+
+
+
+Carlos aclaraciones
+En menu.cpp 
+
+se utilizo el apoyo de la IA para la validacion de datos
+porque estaba aceptando caracteres especiales y/o letras,
+en este caso:
+cin.fail(), valida si la opcion ingresada fallo, 
+cin.clear(),limpia los errores
+cin.ignore(),se usa para limpiar la entrada incorrecta
+system("cls"), limpia la pantalla 
+system("pause");
+para todo esto se usa la libreria <stdlib.h>
+ejemplo:
+while (cin.fail() || opcion < 1 || opcion > 6) {
+    cin.clear();
+    cin.ignore(10000, '\n');
+
+En reportes.cpp
+
+Se utlizo ayuda de la IA para 
+usar el "continue" en el metodo clienteConMasReservasActivas() ya
+que al cumplir continua el proceso
+
+En el horasMayorYMenorDemanda() se utilizo el apoyo de la IA para
+la creacion de la franja de 12 opciones disponibilidad, asi como
+para asignar un precio mas alto cuando asi era requerido
+
