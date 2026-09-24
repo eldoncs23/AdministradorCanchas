@@ -46,7 +46,7 @@ bool ColeccionEspera::agregarEspera(Cliente* cliente, Cancha* cancha, int posici
 }
 void ColeccionEspera::mostrarListadoEspera() const {
     if (cant == 0) {
-        cout << "La lista de espera está vacía." << endl;
+        cout << "La lista de espera esta vacia." << endl;
         return;
     }
     cout << "================================" << endl;

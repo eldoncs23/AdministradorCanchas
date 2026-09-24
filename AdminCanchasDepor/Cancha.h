@@ -8,12 +8,12 @@ class Cancha {
 private:
     string codigo;
     string deporte;
-    float precioPorHora;
+    double precioPorHora;
 	char franjas[CANT_FRANJAS]; // Arreglo de 12 franjas horarias, cada una representada por un carácter ('L' para libre, 'O' para ocupada, M = Mantenimiento)
 
 public:
     Cancha();
-	Cancha(string codigo, string deporte, float precioPorHora);
+	Cancha(string codigo, string deporte, double precioPorHora);
     ~Cancha();
 	//getters
     string getCodigo() const;
@@ -23,7 +23,7 @@ public:
 	//setts 
     void setDeporte(string deporte);
 	void setCodigo(string codigo);
-	void setPrecioPorHora(float precioPorHora);
+	void setPrecioPorHora(double precioPorHora);
 
     //metodos para cambiar estados de franjas
 	bool setMantenimientoFranja(int indiceFranja);

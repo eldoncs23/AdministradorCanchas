@@ -2,7 +2,6 @@
 #include "Cancha.h"
 #include "Cliente.h"
 #include "Reserva.h"
-#include <stdlib.h>
 Estadisticas::Estadisticas() {
 	// Constructor
 }
@@ -12,10 +11,7 @@ Estadisticas::~Estadisticas() {
 
 // 1. Cancha más reservada
 void Estadisticas::reporteCanchaMasReservada(Cancha* canchas[], int cantCanchas, Reserva* reservas[], int cantReservas) const {
-	cout << "\n==============================================" << endl;
-	cout << "      CANCHA CON MAYOR CANTIDAD DE RESERVAS     " << endl;
-	cout << "================================================" << endl;
-
+	
 	if (cantCanchas == 0 || cantReservas == 0) {
 		cout << "No hay canchas o reservas registradas." << endl;
 		return;
@@ -24,7 +20,7 @@ void Estadisticas::reporteCanchaMasReservada(Cancha* canchas[], int cantCanchas,
 	string codigoMasReservado = "";
 	for (int i = 0; i < cantCanchas; i++) {
 		int contadorLocal = 0;
-		std::string codActual = canchas[i]->getCodigo();
+		string codActual = canchas[i]->getCodigo();
 
 		for (int j = 0; j < cantReservas; j++) {
 			if (reservas[j]->isActiva() && reservas[j]->getCancha() != nullptr) {
@@ -34,23 +30,21 @@ void Estadisticas::reporteCanchaMasReservada(Cancha* canchas[], int cantCanchas,
 			}
 		}
 		cout << "-> Cancha " << codActual << " (" << canchas[i]->getDeporte()
-			<< "): " << contadorLocal << " reservas activas." << std::endl;
+			<< "): " << contadorLocal << " reservas activas." << endl;
 		if (contadorLocal > maxReservas) {
 			maxReservas = contadorLocal;
 			codigoMasReservado = codActual;
 		}
 	}
-	cout << "----------------------------------------------" << std::endl;
+	cout << "----------------------------------------------" << endl;
 	cout << "RESULTADO: La cancha mas reservada es " << codigoMasReservado
-		<< " con un total de " << maxReservas << " reservas." << std::endl;
+		<< " con un total de " << maxReservas << " reservas." << endl;
 	
 }
 
 // 2. Cliente con más reservas
 void Estadisticas::reporteClienteMasReservas(Cliente* clientes[], int cantClientes, Reserva* reservas[], int cantReservas) const {
-	cout << "\n==============================================" << endl;
-	cout << "      CLIENTE CON MAYOR CANTIDAD DE RESERVAS     " << endl;
-	cout << "================================================" << endl;
+	
 	if (cantClientes == 0 || cantReservas == 0) {
 		cout << "No hay clientes o reservas registradas." << endl;
 		return;
@@ -60,7 +54,7 @@ void Estadisticas::reporteClienteMasReservas(Cliente* clientes[], int cantClient
 	string nombreClienteMax = "";
 	for (int i = 0; i < cantClientes; i++) {
 		int contadorLocal = 0;
-		std::string idActual = clientes[i]->getIdentificacion();
+		string idActual = clientes[i]->getIdentificacion();
 
 		for (int j = 0; j < cantReservas; j++) {
 			if (reservas[j]->isActiva() && reservas[j]->getCliente() != nullptr) {
@@ -70,44 +64,40 @@ void Estadisticas::reporteClienteMasReservas(Cliente* clientes[], int cantClient
 			}
 		}
 		cout << "-> Cliente ID: " << idActual << " (" << clientes[i]->getNombre()
-			<< "): " << contadorLocal << " reservas." << std::endl;
+			<< "): " << contadorLocal << " reservas." << endl;
 		if (contadorLocal > maxReservas) {
 			maxReservas = contadorLocal;
 			idClienteMax = idActual;
 			nombreClienteMax = clientes[i]->getNombre();
 		}
 	}
-	cout << "----------------------------------------------" << std::endl;
+	cout << "----------------------------------------------" << endl;
 	cout << "RESULTADO: El cliente con mas reservas es " << nombreClienteMax 
-              << " (ID: " << idClienteMax << ") con " << maxReservas << " reservas." << std::endl;
+              << " (ID: " << idClienteMax << ") con " << maxReservas << " reservas." << endl;
 }
 
 // 3. Ingreso total
 void Estadisticas::reporteIngresoTotal(Reserva* reservas[], int cantReservas) const {
-	cout << "\n==============================================" << endl;
-	cout << "              REPORTE DE INGESOS TOTALES        " << endl;
-	cout << "================================================" << endl;
+	
 	double ingresoTotal = 0.0;
 	int reservasActivas = 0;
 	for (int i = 0; i < cantReservas; i++) {
 		if (reservas[i]->isActiva()) {
 			double monto = reservas[i]->getMontoTotal();
-			ingresoTotal += monto;
+			ingresoTotal += monto; 
 			reservasActivas++;
 			cout << "-> Reserva #" << reservas[i]->getNumeroReserva()
-				<< " | Monto: " << monto << " CRC" << std::endl;
+				<< " | Monto: " << monto << " CRC" << endl;
 		}
 	}
-	cout << "----------------------------------------------" << std::endl;
-	cout << "RESULTADO: El ingreso total es: $" << ingresoTotal << " CRC" << std::endl;
-	cout << "Total de reservas activas: " << reservasActivas << std::endl;
+	cout << "----------------------------------------------" << endl;
+	cout << "RESULTADO: El ingreso total es: " << ingresoTotal << " CRC" << endl;
+	cout << "Total de reservas activas: " << reservasActivas << endl;
 }
 
 // 4. Porcentaje de ocupación
 void Estadisticas::reportePorcentajeOcupacion(Cancha* canchas[], int cantCanchas, Reserva* reservas[], int cantReservas) const {
-	cout << "\n==============================================" << endl;
-	cout << "      CANCHA CON MAYOR CANTIDAD DE RESERVAS     " << endl;
-	cout << "================================================" << endl;
+	
 	if (cantCanchas == 0) {
 		cout << "No hay canchas registradas." << endl;
 		return;
@@ -128,15 +118,12 @@ void Estadisticas::reportePorcentajeOcupacion(Cancha* canchas[], int cantCanchas
 		cout << "-> Cancha " << codActual
 			<< "| Franjas ocupadas: " << franjasOcupadas << "/" << CANT_FRANJAS
 			<< "| Ocupacion: " << porcentaje << "%" << endl;
-			
 	}
 }
 
 // 5. Horarios extremos
 void Estadisticas::reporteHorasExtremas(Reserva* reservas[], int cantReservas) const {
-	cout << "\n==============================================" << endl;
-	cout << "      HORARIOS EXTREMOS DE RESERVAS             " << endl;
-	cout << "================================================" << endl;
+	
 	int franjasConteo[CANT_FRANJAS] = { 0 }; // Inicializar el arreglo de conteo de franjas
 	for (int i = 0; i < cantReservas; i++) {
 		if (reservas[i]->isActiva()) {

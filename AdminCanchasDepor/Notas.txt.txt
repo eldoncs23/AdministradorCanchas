@@ -1,0 +1,29 @@
+Universidad Nacional de Costa Rica
+Programación 1 - Johnny Flores Araya
+Proyecto: Administrador de Canchas Deportivas
+Estudiantes:
+- Carlos Brenes Lopez
+- Eldon Caldwell Salazar
+
+
+Aclaracion de tildes, no se usaron tildes para que el programa no se rompa, no logramos levantar esa restriccion
+
+Aclaracion de metodos implementados en el programa:
+
+canchaConMasReservasActivas(const ColeccionCanchas& coleccionCanchas, const ColeccionReservas& coleccionReservas)
+NOTAS: "usar los prints dentro de los métodos fue un error estructural que tuvimos
+pudimos imprimir los " - Carlos
+
+- el propósito de este método es identificar la o las canchas (en caso de empate) con 
+la mayor cantidad de reservas en estado activo en el sistema, para ello necesita conocer
+por referencia const a la colección de canchas y reservas, ya que estas 2 alojan a los clientes
+que a su vez hicieron reservas, con esas reservas se determina a 1 o mas ganadores si es que hay empate.
+se usa paso por referencia para no tener que pasar las colecciones enteras ya que son más pesadas, mejor una copia
+del objeto en memoria. Al usar const nos aseguramos que solo vamos a leer no modificar.
+
+como sabemos el máximo de reservas por cancha? 
+1. Recorrer la lista de 0 a totalCanchas -1 (ya que es un vector)
+2. asegurarse de que no haya canchas nulas "nullptr"
+3. pedirle a colección de reservas que le devuelva el total de reservas activas
+	filtradas por el código de esa cancha.
+4. si el conteo es mayor a maxReservas, actualiza la variable maxReservas = conteo.

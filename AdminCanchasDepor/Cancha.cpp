@@ -9,7 +9,7 @@ Cancha::Cancha() {
     }
 }
 //constructor con parametros
-Cancha::Cancha(string codigo, string deporte, float precioPorHora) {
+Cancha::Cancha(string codigo, string deporte, double precioPorHora) {
 	this->codigo = codigo;
     this->deporte = deporte;
 	this->precioPorHora = precioPorHora;
@@ -47,7 +47,7 @@ void Cancha::setCodigo(string codigo) {
 void Cancha::setDeporte(string deporte) {
 	this->deporte = deporte; //aqui si se usa el this porque deporte no es constante y se puede modificar
 }
-void Cancha::setPrecioPorHora(float precioPorHora) {
+void Cancha::setPrecioPorHora(double precioPorHora) {
     this->precioPorHora = precioPorHora;
 }
 

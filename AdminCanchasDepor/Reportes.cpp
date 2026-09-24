@@ -1,9 +1,6 @@
 #include "Reportes.h"
 
 void Reportes::canchaConMasReservasActivas(const ColeccionCanchas& coleccionCanchas, const ColeccionReservas& coleccionReservas) {
-    cout << "\n========================================================" << endl;
-    cout << "   REPORTE: CANCHA CON MAYOR CANTIDAD DE RESERVAS ACTIVAS" << endl;
-    cout << "========================================================" << endl;
 	int totalCanchas = coleccionCanchas.getCant();
 	if (totalCanchas == 0) {
 		cout << "No hay canchas registradas en el sistema." << endl;
@@ -42,10 +39,7 @@ void Reportes::canchaConMasReservasActivas(const ColeccionCanchas& coleccionCanc
     
 }
 void Reportes::clienteConMasReservasActivas(const ColeccionClientes& clientes, const ColeccionReservas& reservas) {
-    cout << "\n========================================================" << endl;
-    cout << "   REPORTE: CLIENTE CON MAYOR CANTIDAD DE RESERVAS ACTIVAS" << endl;
-    cout << "========================================================" << endl;
-
+    
     if (clientes.getCant() == 0) {
         cout << "No hay clientes registrados en el sistema." << endl;
         return;
@@ -96,9 +90,7 @@ void Reportes::clienteConMasReservasActivas(const ColeccionClientes& clientes, c
     cout << "========================================================\n" << endl;
 }
 void Reportes::ingresoTotalReservasActivas(const ColeccionReservas& reservas) {
-    cout << "\n========================================================" << endl;
-    cout << "    REPORTE: INGRESO TOTAL POR RESERVAS ACTIVAS" << endl;
-    cout << "========================================================" << endl;
+
 
     if (reservas.getCant() == 0) {
         cout << "No hay reservas en el sistema." << endl;
@@ -148,9 +140,6 @@ void Reportes::ingresoTotalReservasActivas(const ColeccionReservas& reservas) {
 }
 
 void Reportes::porcentajeOcupacionPorCancha(const ColeccionCanchas& canchas, const ColeccionReservas& reservas) {
-    cout << "\n========================================================" << endl;
-    cout << "     REPORTE: PORCENTAJE DE OCUPACION POR CANCHA" << endl;
-    cout << "========================================================" << endl;
 
     if (canchas.getCant() == 0) {
         cout << "No hay canchas registradas." << endl;
@@ -187,9 +176,6 @@ void Reportes::porcentajeOcupacionPorCancha(const ColeccionCanchas& canchas, con
     cout << "========================================================\n" << endl;
 }
 void Reportes::horasMayorYMenorDemanda(const ColeccionReservas& reservas, int totalFranjasDia) {
-    cout << "\n========================================================" << endl;
-    cout << "   REPORTE: HORAS CON MAYOR Y MENOR DEMANDA DE RESERVAS" << endl;
-    cout << "========================================================" << endl;
 
     // Arreglo dinámico según las franjas especificadas (12 franjas: 0 a 11)
     int* conteoFranjas = new int[totalFranjasDia];

@@ -277,10 +277,10 @@ void Menu::menuClientes() {
 
         case 5:
             break;
-		/*default:
+		default:
 			cout << "\nOpcion invalida. Intente nuevamente." << endl;
 			system("pause");
-			break;*/
+			break;
         }
     } while (opcion != 5);
 }
@@ -339,7 +339,7 @@ void Menu::menuReservas() {
             }
 
 			// Guía de franjas horarias para el usuario 
-            cout << "\n-----------------------------------------------------" << endl;
+            cout << "\n-----------------------------------------------------" << endl; 
             cout << "GUIA DE FRANJAS HORARIAS (0 a 11):" << endl;
             cout << " 0: 08:00-09:00 |  1: 09:00-10:00 |  2: 10:00-11:00" << endl;
             cout << " 3: 11:00-12:00 |  4: 12:00-13:00 |  5: 13:00-14:00" << endl;
@@ -442,10 +442,10 @@ void Menu::menuReservas() {
 
         case 7:
             break;
-		/*default:
+		default:
 			cout << "\nOpcion invalida. Intente nuevamente." << endl;
 			system("pause");
-			break;*/
+			break;
         }
     } while (opcion != 7);
 }
@@ -557,10 +557,10 @@ void Menu::menuEsperas() {
 
         case 4:
             break;
-		/*default:
+		default:
 			cout << "\nOpcion invalida. Intente nuevamente." << endl;
 			system("pause");
-			break;*/
+			break;
         }
     } while (opcion != 4);
 }
@@ -570,7 +570,7 @@ void Menu::menuReportes() {
     do {
         system("cls");
         cout << "==============================================" << endl;
-        cout << "        MODULO DE REPORTES Y ESTADISTICAS" << endl;
+        cout << "            REPORTES Y ESTADISTICAS           " << endl;
         cout << "==============================================" << endl;
         cout << "1. Cancha con mayor cantidad de reservas activas" << endl;
         cout << "2. Cliente con mayor cantidad de reservas activas" << endl;
@@ -592,31 +592,46 @@ void Menu::menuReportes() {
         system("cls");
         switch (opcion) {
         case 1:
+            cout << "\n==============================================" << endl;
+            cout << "      CANCHA CON MAYOR CANTIDAD DE RESERVAS     " << endl;
+            cout << "================================================" << endl;
             Reportes::canchaConMasReservasActivas(*coleccionCanchas, *coleccionReservas);
             system("pause");
             break;
         case 2:
+            cout << "\n========================================================" << endl;
+            cout << "   REPORTE: CLIENTE CON MAYOR CANTIDAD DE RESERVAS ACTIVAS" << endl;
+            cout << "========================================================" << endl;
             Reportes::clienteConMasReservasActivas(*coleccionClientes, *coleccionReservas);
             system("pause");
             break;
         case 3:
+            cout << "\n========================================================" << endl;
+            cout << "    REPORTE: INGRESO TOTAL POR RESERVAS ACTIVAS" << endl;
+            cout << "========================================================" << endl;
             Reportes::ingresoTotalReservasActivas(*coleccionReservas);
             system("pause");
             break;
         case 4:
+            cout << "\n========================================================" << endl;
+            cout << "    REPORTE: PORCENTAJE DE OCUPACION POR CANCHA" << endl;
+            cout << "========================================================" << endl;
             Reportes::porcentajeOcupacionPorCancha(*coleccionCanchas, *coleccionReservas);
             system("pause");
             break;
         case 5:
+            cout << "\n========================================================" << endl;
+            cout << "    REPORTE: HORAS DE MAYOR Y MENOR DEMANDA" << endl;
+            cout << "========================================================" << endl;
             Reportes::horasMayorYMenorDemanda(*coleccionReservas);
             system("pause");
             break;
         case 6:
             break;
-            /*default:
+        default:
 			cout << "Opcion invalida. Intente nuevamente." << endl;
 			system("pause");
-			break;*/
+			break;
         }
     } while (opcion != 6);
 }

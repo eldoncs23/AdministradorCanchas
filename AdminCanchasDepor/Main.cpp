@@ -1,9 +1,9 @@
 /*
 	Universidad Nacional de Costa Rica
-	Programación 1 - Johny
+	Programación 1 - Johnny Flores Araya
 	Proyecto: Administrador de Canchas Deportivas
 	Estudiantes:
-	- (charlie ponga su nombre)
+	- Carlos Brenes Lopez
 	- Eldon Caldwell Salazar 
 
 
